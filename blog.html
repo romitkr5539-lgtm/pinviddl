@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>Blog - Pinterest Tips, Guides & Downloader News | PinViddl</title>
+
+    <meta name="description" content="Read the PinViddl blog for Pinterest tips, how-to guides, downloader updates, and creative inspiration. Learn how to save Pinterest videos, images, and GIFs." />
+    <meta name="keywords" content="pinterest tips, download pinterest video guide, pinterest how to, pinviddl blog, pinterest image download tutorial" />
+    <link rel="canonical" href="https://pinviddl.com/blog" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog - Pinterest Tips, Guides & Downloader News | PinViddl" />
+    <meta property="og:description" content="Pinterest tips, how-to guides, and downloader updates from the PinViddl team." />
+    <meta property="og:url" content="https://pinviddl.com/blog" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog - Pinterest Tips, Guides & Downloader News | PinViddl" />
+    <meta name="twitter:description" content="Pinterest tips, how-to guides, and downloader updates from the PinViddl team." />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <style>
+        /* ── Blog page hero ── */
+        .blog-hero {
+            padding: 60px 0 44px;
+            text-align: center;
+        }
+        .blog-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+        .blog-hero h1::after {
+            display: block;
+            width: 42px;
+            height: 5px;
+            margin: 18px auto 0;
+            border-radius: 4px;
+            background: #e60023;
+            content: "";
+        }
+        .blog-hero p {
+            color: #a4a4a4;
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ── Category filter pills ── */
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 44px;
+        }
+        .filter-pill {
+            padding: 7px 18px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid #3b3b3b;
+            background: #1b1b1b;
+            color: #a4a4a4;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .filter-pill:hover,
+        .filter-pill.active {
+            background: #e60023;
+            border-color: #e60023;
+            color: #fff;
+        }
+
+        /* ── Featured post (large card) ── */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .featured-post:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 55px rgba(0,0,0,0.55);
+        }
+        .featured-thumb {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-body {
+            padding: 36px 36px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .post-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(230,0,35,0.1);
+            border: 1px solid rgba(230,0,35,0.2);
+            border-radius: 999px;
+            color: #ff3654;
+            font-size: 0.73rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            margin-bottom: 14px;
+            width: fit-content;
+        }
+        .featured-body h2 {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .featured-body p {
+            color: #a4a4a4;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .post-meta span { display: flex; align-items: center; gap: 5px; }
+        .post-meta svg { stroke: #555; width: 13px; height: 13px; }
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #e60023;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 18px;
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+        .read-more:hover { gap: 10px; }
+        .read-more svg { stroke: #e60023; width: 14px; height: 14px; }
+
+        /* ── Blog grid ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 60px;
+        }
+        .blog-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+        }
+        .card-thumb {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-thumb-placeholder {
+            width: 100%;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+        }
+        .card-body {
+            padding: 20px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-body h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.35;
+            margin: 10px 0 8px;
+        }
+        .card-body p {
+            color: #a4a4a4;
+            font-size: 0.83rem;
+            line-height: 1.65;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #555;
+            border-top: 1px solid #242424;
+            padding-top: 12px;
+            margin-top: auto;
+        }
+        .card-date { display: flex; align-items: center; gap: 5px; }
+        .card-date svg { stroke: #555; width: 12px; height: 12px; }
+        .card-link {
+            color: #e60023;
+            font-weight: 700;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .card-link svg { stroke: #e60023; width: 12px; height: 12px; }
+
+        /* ── Newsletter strip ── */
+        .newsletter-strip {
+            background: linear-gradient(135deg, rgba(230,0,35,0.1), rgba(230,0,35,0.03));
+            border: 1px solid rgba(230,0,35,0.18);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .newsletter-strip h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .newsletter-strip p {
+            color: #a4a4a4;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 220px;
+            background: #0c0c0c;
+            border: 1px solid #3c3c3c;
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            padding: 12px 16px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .newsletter-form input:focus { border-color: #e60023; }
+        .newsletter-form input::placeholder { color: #555; }
+        .newsletter-btn {
+            background: #e60023;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 12px 22px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            white-space: nowrap;
+        }
+        .newsletter-btn:hover { background: #ff1744; }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-thumb { min-height: 220px; max-height: 260px; }
+        }
+        @media (max-width: 600px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .featured-body { padding: 24px 22px; }
+            .newsletter-strip { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="blog-hero">
+            <h1>PinViddl Blog</h1>
+            <p>Pinterest tips, how-to guides, creative ideas, and the latest updates from the PinViddl team.</p>
+        </section>
+
+        <!-- Category filters -->
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-pill active" data-filter="all">All Posts</button>
+            <button class="filter-pill" data-filter="guide">How-To Guides</button>
+            <button class="filter-pill" data-filter="tips">Pinterest Tips</button>
+            <button class="filter-pill" data-filter="update">Updates</button>
+            <button class="filter-pill" data-filter="creative">Creative Ideas</button>
+        </div>
+
+        <!-- Featured post -->
+        <a href="/blog/how-to-download-pinterest-videos.html" class="featured-post" data-category="guide">
+            <div class="featured-thumb" style="background:linear-gradient(135deg,#1a0005,#2d0010,#1a0005);display:flex;align-items:center;justify-content:center;min-height:280px;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(230,0,35,0.5)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div class="featured-body">
+                <span class="post-category">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    How-To Guide
+                </span>
+                <h2>How to Download Pinterest Videos in HD — Complete Guide</h2>
+                <p>Everything you need to know about saving Pinterest videos in the highest available quality. Works on iPhone, Android, Windows, and Mac — no app install needed.</p>
+                <div class="post-meta">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        September 10, 2026
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        6 min read
+                    </span>
+                </div>
+                <span class="read-more">
+                    Read article
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </div>
+        </a>
+
+        <!-- Blog grid -->
+        <div class="blog-grid" id="blog-grid">
+
+            <!-- Post 1 -->
+            <a href="/blog/how-to-save-pinterest-images.html" class="blog-card" data-category="guide">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #1a0a0a, #2d1010);">🖼️</div>
+                <div class="card-body">
+                    <span class="post-category">How-To Guide</span>
+                    <h3>How to Save Pinterest Images in Full Resolution</h3>
+                    <p>A step-by-step walkthrough for downloading any Pinterest photo in its original full resolution on any device, browser, or operating system.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Sep 8, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 2 -->
+            <a href="/blog/download-pinterest-gif.html" class="blog-card" data-category="guide">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #0a0a1a, #101028);">✨</div>
+                <div class="card-body">
+                    <span class="post-category">How-To Guide</span>
+                    <h3>How to Download Pinterest GIFs (and Why They're Sometimes MP4s)</h3>
+                    <p>Pinterest stores most animated GIFs as MP4 videos. Here's how to download them correctly and convert them if you need the original GIF format.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Sep 5, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 3 -->
+            <a href="/blog/best-pinterest-boards-for-designers.html" class="blog-card" data-category="creative">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #0a1a0a, #102210);">🎨</div>
+                <div class="card-body">
+                    <span class="post-category">Creative Ideas</span>
+                    <h3>10 Pinterest Boards Every Designer Should Follow in 2026</h3>
+                    <p>A curated list of the most inspiring Pinterest boards for UI designers, graphic artists, and creative professionals looking to build a stronger visual vocabulary.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Sep 3, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 4 -->
+            <a href="/blog/pinterest-tips-for-creators.html" class="blog-card" data-category="tips">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #1a1200, #2d2000);">💡</div>
+                <div class="card-body">
+                    <span class="post-category">Pinterest Tips</span>
+                    <h3>7 Pinterest Tips for Content Creators to Grow Their Reach</h3>
+                    <p>Practical tactics for boosting your Pinterest profile, creating pins that get repinned, and using boards strategically to drive traffic to your work.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Aug 30, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 5 -->
+            <a href="/blog/pinviddl-september-2026-update.html" class="blog-card" data-category="update">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #1a0010, #2d0020);">🚀</div>
+                <div class="card-body">
+                    <span class="post-category">Update</span>
+                    <h3>PinViddl September 2026 Update — New Pages, Faster Downloads</h3>
+                    <p>We've launched dedicated image and GIF downloader pages, improved the media preview flow, and added live loading progress. Here's everything that's new.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Sep 10, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 6 -->
+            <a href="/blog/how-to-use-pinterest-for-inspiration.html" class="blog-card" data-category="creative">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #00101a, #002030);">🌟</div>
+                <div class="card-body">
+                    <span class="post-category">Creative Ideas</span>
+                    <h3>How to Use Pinterest as a Professional Mood Board Tool</h3>
+                    <p>Turn Pinterest into a focused creative research hub. We cover board organisation strategies, secret boards for client work, and how to export your inspiration offline.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Aug 26, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 7 -->
+            <a href="/blog/pinterest-video-pin-guide.html" class="blog-card" data-category="tips">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #100010, #200020);">🎬</div>
+                <div class="card-body">
+                    <span class="post-category">Pinterest Tips</span>
+                    <h3>A Beginner's Guide to Pinterest Video Pins</h3>
+                    <p>Everything you need to know about creating, discovering, and saving Pinterest video pins — from aspect ratios and lengths to the best strategies for finding quality video content.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Aug 20, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 8 -->
+            <a href="/blog/pinterest-downloader-comparison.html" class="blog-card" data-category="tips">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">⚖️</div>
+                <div class="card-body">
+                    <span class="post-category">Pinterest Tips</span>
+                    <h3>PinViddl vs Other Pinterest Downloaders — What's the Difference?</h3>
+                    <p>An honest comparison of the most popular Pinterest downloaders in 2026, covering speed, quality, privacy, and ease of use on mobile and desktop.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Aug 18, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Post 9 -->
+            <a href="/blog/pinterest-copyright-guide.html" class="blog-card" data-category="tips">
+                <div class="card-thumb-placeholder" style="background: linear-gradient(135deg, #100800, #201400);">📜</div>
+                <div class="card-body">
+                    <span class="post-category">Pinterest Tips</span>
+                    <h3>Can You Download Pinterest Images? Copyright Rules Explained</h3>
+                    <p>A clear breakdown of what you can and can't do with downloaded Pinterest content — including personal use, commercial use, and how to credit creators properly.</p>
+                    <div class="card-footer">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Aug 14, 2026
+                        </span>
+                        <span class="card-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-strip">
+            <h2>Stay in the loop</h2>
+            <p>Get new guides, Pinterest tips, and PinViddl updates delivered straight to your inbox.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" id="nl-email" placeholder="Your email address" required autocomplete="email" />
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog.html">Blog</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+        });
+
+        // Category filter
+        const pills = document.querySelectorAll('.filter-pill');
+        const cards = document.querySelectorAll('#blog-grid .blog-card');
+        const featuredPost = document.querySelector('.featured-post');
+
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                const filter = pill.dataset.filter;
+
+                // Featured post
+                if (filter === 'all' || featuredPost.dataset.category === filter) {
+                    featuredPost.style.display = '';
+                } else {
+                    featuredPost.style.display = 'none';
+                }
+
+                // Grid cards
+                let visibleCount = 0;
+                cards.forEach(card => {
+                    const show = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = show ? '' : 'none';
+                    if (show) visibleCount++;
+                });
+            });
+        });
+
+        // Newsletter form
+        const nlForm = document.getElementById('newsletter-form');
+        nlForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = nlForm.querySelector('.newsletter-btn');
+            btn.textContent = 'Subscribed ✓';
+            btn.style.background = '#16a34a';
+            btn.disabled = true;
+            nlForm.querySelector('input').value = '';
+            setTimeout(() => {
+                btn.textContent = 'Subscribe';
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# robots.txt for pinviddl.com
+
+User-agent: *
+Allow: /
+
+# Block any internal or utility paths that shouldn't be indexed
+Disallow: /api/
+Disallow: /api/proxy
+Disallow: /api/download
+Disallow: /.env
+Disallow: /.env.example
+
+# Sitemap location
+Sitemap: https://pinviddl.com/sitemap.xml

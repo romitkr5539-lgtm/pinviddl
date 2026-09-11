@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>Privacy Policy - PinViddl</title>
+    <meta name="description" content="PinViddl's Privacy Policy explains exactly what data we collect, how it is used, who it is shared with, and how long it is kept. Read before using the service." />
+    <link rel="canonical" href="https://pinviddl.com/privacy" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        .page-hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+        .page-hero h1::after {
+            display: block;
+            width: 42px;
+            height: 5px;
+            margin: 18px auto 0;
+            border-radius: 4px;
+            background: #e60023;
+            content: "";
+        }
+        .page-hero p {
+            color: #a4a4a4;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+        /* Table of contents */
+        .toc-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+        }
+        .toc-card h2 {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #888;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+        }
+        .toc-list li { counter-increment: toc-item; }
+        .toc-list a {
+            color: #a4a4a4;
+            font-size: 0.87rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: #e60023; }
+        .toc-list a::before {
+            content: counter(toc-item) ".";
+            color: #e60023;
+            font-weight: 700;
+            font-size: 0.8rem;
+            min-width: 18px;
+        }
+        /* Policy card */
+        .policy-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 24px;
+            padding: 44px 48px;
+            margin-bottom: 60px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+        }
+        .policy-section {
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #222;
+        }
+        .policy-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .section-num {
+            display: inline-block;
+            background: rgba(230,0,35,0.1);
+            color: #e60023;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            margin-bottom: 8px;
+            letter-spacing: 0.06em;
+        }
+        .policy-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 14px;
+        }
+        .policy-card h3 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #d1d1d1;
+            margin: 20px 0 8px;
+        }
+        .policy-card p {
+            color: #a4a4a4;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .policy-card p:last-child { margin-bottom: 0; }
+        .policy-card ul, .policy-card ol {
+            margin: 10px 0 14px 20px;
+        }
+        .policy-card li {
+            color: #a4a4a4;
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+        .policy-card strong { color: #d1d1d1; }
+        .policy-card a {
+            color: #e60023;
+            text-decoration: none;
+        }
+        .policy-card a:hover { text-decoration: underline; }
+        .policy-card code {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #ff3654;
+            font-size: 0.85em;
+            padding: 1px 7px;
+        }
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.88rem;
+        }
+        .data-table th {
+            background: #1b1b1b;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 14px;
+            border: 1px solid #2b2b2b;
+        }
+        .data-table td {
+            color: #a4a4a4;
+            padding: 10px 14px;
+            border: 1px solid #222;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        .data-table tr:nth-child(even) td { background: #181818; }
+        /* Last updated badge */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.08);
+            color: #ff3654;
+            border: 1px solid rgba(230,0,35,0.2);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            margin-bottom: 32px;
+        }
+        /* Info box */
+        .info-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #2b2b2b;
+            border-left: 3px solid #e60023;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        .info-box p {
+            margin: 0 !important;
+            font-size: 0.88rem !important;
+        }
+        @media (max-width: 768px) {
+            .policy-card { padding: 28px 22px; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th, .data-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Privacy Policy</h1>
+            <p>What data PinViddl collects, why it collects it, and what it does with it.</p>
+        </section>
+
+        <!-- Table of contents -->
+        <div class="toc-card">
+            <h2>Contents</h2>
+            <ol class="toc-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#what-we-collect">What We Collect</a></li>
+                <li><a href="#how-we-use">How We Use It</a></li>
+                <li><a href="#cookies">Cookies</a></li>
+                <li><a href="#third-parties">Third-Party Services</a></li>
+                <li><a href="#data-retention">Data Retention</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#children">Children</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact-privacy">Contact</a></li>
+            </ol>
+        </div>
+
+        <div class="policy-card">
+            <span class="last-updated">Last Updated: September 11, 2026</span>
+
+            <!-- 1. Overview -->
+            <div class="policy-section" id="overview">
+                <span class="section-num">01</span>
+                <h2>Overview</h2>
+                <p>PinViddl ("we", "us", "our") operates pinviddl.com — a free, browser-based tool that lets users download publicly available Pinterest media including videos, images, and GIFs. This Privacy Policy describes the personal and non-personal information we collect when you use PinViddl, the purposes for which that information is used, who we share it with, how long we keep it, and the rights available to you.</p>
+                <p>PinViddl is designed to collect as little data as possible. The core function of the tool — processing a Pinterest URL and returning the associated media — does not require you to create an account, provide your name, or supply any contact information. We do not sell personal data to advertisers or data brokers.</p>
+                <div class="info-box">
+                    <p>By using PinViddl you agree to the practices described in this policy. If you do not agree, please stop using the service. Continued use after any update to this policy constitutes acceptance of the revised terms.</p>
+                </div>
+            </div>
+
+            <!-- 2. What We Collect -->
+            <div class="policy-section" id="what-we-collect">
+                <span class="section-num">02</span>
+                <h2>What We Collect</h2>
+                <p>The information we collect falls into two categories: data you actively provide and data collected automatically as you use the service.</p>
+
+                <h3>2a. Data You Provide</h3>
+                <p><strong>Pinterest Pin URLs.</strong> When you paste a Pinterest link into the downloader, that URL is transmitted to our processing infrastructure solely to retrieve the associated media. We do not permanently store Pin URLs. They are processed in memory for the duration of the request and discarded immediately after the response is returned to your browser.</p>
+                <p><strong>Contact form submissions.</strong> If you use the <a href="/contact.html">contact form</a>, we collect your name, email address, selected subject, and the message you write. This data is used only to respond to your enquiry and is handled via Formsubmit.co (see Third-Party Services below).</p>
+
+                <h3>2b. Data Collected Automatically</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data type</th>
+                            <th>What it includes</th>
+                            <th>Why it is collected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Server log data</strong></td>
+                            <td>IP address, request timestamp, HTTP method, URL path, response status code, browser user-agent, referring URL</td>
+                            <td>Security monitoring, abuse prevention, and debugging errors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics data</strong></td>
+                            <td>Pages visited, time on page, approximate geographic region (country/city level), device type, browser type, operating system</td>
+                            <td>Understanding aggregate usage patterns to improve the service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance data</strong></td>
+                            <td>Page load times, error rates, API response times</td>
+                            <td>Monitoring and maintaining service stability</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Analytics and performance data is collected in aggregate and anonymised form — it cannot be used to identify individual users. IP addresses in server logs are not cross-referenced with analytics data.</p>
+            </div>
+
+            <!-- 3. How We Use It -->
+            <div class="policy-section" id="how-we-use">
+                <span class="section-num">03</span>
+                <h2>How We Use Your Information</h2>
+                <p>The data we collect is used only for the following purposes:</p>
+                <ul>
+                    <li><strong>Processing download requests.</strong> Pin URLs are used in real time to retrieve media from Pinterest's public pages and return it to you. No other use is made of these URLs.</li>
+                    <li><strong>Responding to contact enquiries.</strong> Name and email data from contact form submissions is used exclusively to reply to the message you sent.</li>
+                    <li><strong>Security and abuse prevention.</strong> Server log data (including IP addresses) is used to detect and block malicious activity, excessive automated requests, and other abuse of the service.</li>
+                    <li><strong>Service improvement.</strong> Anonymised analytics data is used to identify which features are used most, which pages load slowly, and where errors occur — information that informs development priorities.</li>
+                    <li><strong>Legal compliance.</strong> We may process data to the extent required to comply with applicable laws, regulations, or lawful requests from competent authorities.</li>
+                </ul>
+                <p>We do not use your data for behavioural advertising. We do not build individual user profiles. We do not sell, rent, lease, or trade personal data to any third party for their own marketing purposes.</p>
+            </div>
+
+            <!-- 4. Cookies -->
+            <div class="policy-section" id="cookies">
+                <span class="section-num">04</span>
+                <h2>Cookies</h2>
+                <p>Cookies are small text files placed on your device by a website. PinViddl uses a minimal set of cookies:</p>
+
+                <h3>Essential cookies</h3>
+                <p>These cookies are strictly necessary for the website to function. They do not track you across other websites and cannot be disabled without breaking core functionality. Examples include session identifiers used temporarily during a download request.</p>
+
+                <h3>Analytics cookies</h3>
+                <p>If third-party analytics are active (see section 5), analytics providers may set their own cookies to distinguish unique visitors and sessions. These cookies collect anonymised, aggregated data only. They do not store names, email addresses, or any directly identifying information.</p>
+
+                <h3>Managing cookies</h3>
+                <p>You can control cookies through your browser settings. Most browsers allow you to block third-party cookies specifically while allowing essential first-party cookies. Blocking all cookies may affect the display or functionality of some parts of the site, but the core download tool will continue to work without analytics cookies present.</p>
+                <p>For instructions on managing cookies in common browsers:</p>
+                <ul>
+                    <li>Chrome: Settings → Privacy and security → Cookies and other site data</li>
+                    <li>Firefox: Settings → Privacy &amp; Security → Cookies and Site Data</li>
+                    <li>Safari: Settings → Safari → Privacy &amp; Security</li>
+                    <li>Edge: Settings → Cookies and site permissions → Cookies and site data</li>
+                </ul>
+            </div>
+
+            <!-- 5. Third Parties -->
+            <div class="policy-section" id="third-parties">
+                <span class="section-num">05</span>
+                <h2>Third-Party Services</h2>
+                <p>PinViddl uses a small number of third-party services to operate the site. Each has access only to the data necessary for its specific function.</p>
+
+                <h3>Cloudflare Workers (Media Processing)</h3>
+                <p>Our media extraction backend runs on Cloudflare Workers. When you submit a Pin URL, it is sent to a Cloudflare Worker endpoint which fetches the relevant public Pinterest page and extracts the media URL. Cloudflare may log basic request metadata (IP address, timestamp, response code) as part of its standard infrastructure logging. Cloudflare's privacy practices are described at <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">cloudflare.com/privacypolicy</a>.</p>
+
+                <h3>Formsubmit.co (Contact Form)</h3>
+                <p>Contact form submissions are processed by Formsubmit.co, which forwards them to our support email address. Formsubmit receives the name, email, subject, and message you submit. Their privacy policy is available at formsubmit.co. We do not store contact form data on our own servers beyond what arrives in our email inbox.</p>
+
+                <h3>Analytics (Optional)</h3>
+                <p>We may use an analytics service such as Google Analytics, Plausible Analytics, or a similar privacy-friendly alternative to understand aggregate traffic patterns. If Google Analytics is in use, it operates with IP anonymisation enabled and interest-based advertising features disabled. Anonymised analytics data is not shared with Google for advertising purposes. You can opt out of Google Analytics tracking across all websites using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+                <h3>Content Delivery (CDN)</h3>
+                <p>Static assets (CSS, JavaScript, images) may be served through a content delivery network for performance. CDN providers may log standard request metadata as described in their respective privacy policies. No personal data is shared with CDN providers beyond what is inherent in the HTTP request (IP address, browser user-agent).</p>
+
+                <div class="info-box">
+                    <p>We do not integrate advertising networks, social media tracking pixels, or affiliate tracking technologies on PinViddl.</p>
+                </div>
+            </div>
+
+            <!-- 6. Data Retention -->
+            <div class="policy-section" id="data-retention">
+                <span class="section-num">06</span>
+                <h2>Data Retention</h2>
+                <p>We keep data only as long as necessary for its stated purpose:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data type</th>
+                            <th>Retention period</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pin URLs submitted for processing</td>
+                            <td>Not stored — discarded after response</td>
+                            <td>Not needed beyond the immediate request</td>
+                        </tr>
+                        <tr>
+                            <td>Server log data (IP, timestamp, path)</td>
+                            <td>Up to 30 days</td>
+                            <td>Security investigation and abuse detection</td>
+                        </tr>
+                        <tr>
+                            <td>Anonymised analytics data</td>
+                            <td>Up to 26 months</td>
+                            <td>Long-term trend analysis for service improvement</td>
+                        </tr>
+                        <tr>
+                            <td>Contact form submissions (email inbox)</td>
+                            <td>Until the enquiry is resolved, then deleted</td>
+                            <td>Responding to support requests</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Server logs older than 30 days are automatically purged. We do not archive or back up personal data beyond the periods stated above.</p>
+            </div>
+
+            <!-- 7. Your Rights -->
+            <div class="policy-section" id="your-rights">
+                <span class="section-num">07</span>
+                <h2>Your Rights</h2>
+                <p>Depending on where you are located, you may have certain rights regarding your personal data. These vary by jurisdiction but commonly include:</p>
+                <ul>
+                    <li><strong>Right of access.</strong> You may request a copy of any personal data we hold about you.</li>
+                    <li><strong>Right to rectification.</strong> If personal data we hold is inaccurate, you may request correction.</li>
+                    <li><strong>Right to erasure.</strong> You may request deletion of personal data we hold about you, where no legal obligation requires its retention.</li>
+                    <li><strong>Right to object.</strong> You may object to certain types of processing, including processing for direct marketing (though we do not engage in this).</li>
+                    <li><strong>Right to data portability.</strong> Where applicable, you may request personal data in a structured, machine-readable format.</li>
+                    <li><strong>Right to withdraw consent.</strong> Where processing is based on consent (e.g., analytics cookies), you may withdraw consent at any time without affecting prior processing.</li>
+                </ul>
+                <p>Given that PinViddl collects minimal personal data and does not store Pin URLs, most data subject requests can be resolved quickly. Requests relating to contact form data or server logs can be directed to us via the <a href="/contact.html">contact page</a>. We will respond within 30 days.</p>
+                <p>If you are located in the European Economic Area or the United Kingdom and believe we have not handled your data lawfully, you have the right to lodge a complaint with your national data protection authority.</p>
+            </div>
+
+            <!-- 8. Security -->
+            <div class="policy-section" id="security">
+                <span class="section-num">08</span>
+                <h2>Security</h2>
+                <p>PinViddl is served exclusively over HTTPS, which encrypts data in transit between your browser and our servers. We apply standard security practices to our infrastructure, including access controls, regular dependency updates, and monitoring for unusual traffic patterns.</p>
+                <p>No internet-based service can guarantee absolute security. While we take reasonable precautions, we cannot warrant that unauthorised third parties will never circumvent our security measures. We recommend using a modern, up-to-date browser and not sharing sensitive personal information through any web service unnecessarily.</p>
+                <p>If you discover a security vulnerability in PinViddl, please report it responsibly by contacting us through the <a href="/contact.html">contact page</a> before any public disclosure.</p>
+            </div>
+
+            <!-- 9. Children -->
+            <div class="policy-section" id="children">
+                <span class="section-num">09</span>
+                <h2>Children's Privacy</h2>
+                <p>PinViddl is not directed at or intended for use by children under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal data from children.</p>
+                <p>If a parent or guardian believes their child has submitted personal information to us — for example through the contact form — please contact us immediately at the address on our <a href="/contact.html">Contact page</a>. We will delete the relevant data promptly upon verification.</p>
+            </div>
+
+            <!-- 10. Changes -->
+            <div class="policy-section" id="changes">
+                <span class="section-num">10</span>
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in the service, applicable law, or our data practices. When we do, the "Last Updated" date at the top of this page will change. For significant changes that materially affect how we handle personal data, we will take reasonable steps to notify users — for example by displaying a notice on the site.</p>
+                <p>We encourage you to review this page periodically. Your continued use of PinViddl following any update constitutes acceptance of the revised policy.</p>
+            </div>
+
+            <!-- 11. Contact -->
+            <div class="policy-section" id="contact-privacy">
+                <span class="section-num">11</span>
+                <h2>Contact</h2>
+                <p>If you have questions about this Privacy Policy, want to exercise a data subject right, or need to report a privacy concern, please use our <a href="/contact.html">Contact page</a>. Select <strong>Other</strong> from the subject dropdown and describe your request in the message field. We aim to respond within 5 business days for privacy-related enquiries.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/">Back to Home</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+        });
+    </script>
+</body>
+</html>

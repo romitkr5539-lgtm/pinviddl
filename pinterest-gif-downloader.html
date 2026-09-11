@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>Pinterest GIF Downloader - Save Pinterest Animated GIFs Free</title>
+
+    <!-- Primary SEO & Meta Tags -->
+    <meta name="description" content="Download Pinterest GIFs and animated images for free. Paste any Pinterest pin link and save the original animated GIF instantly — no login needed." />
+    <meta name="keywords" content="pinterest gif downloader, download pinterest gif, save pinterest animation, pinterest animated image downloader, pin gif saver" />
+    <link rel="canonical" href="https://pinviddl.com/pinterest-gif-downloader" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinterest GIF Downloader - Save Pinterest Animated GIFs Free" />
+    <meta property="og:description" content="Download animated GIFs from any Pinterest pin for free. No login, no app, instant save." />
+    <meta property="og:url" content="https://pinviddl.com/pinterest-gif-downloader" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pinterest GIF Downloader - Save Pinterest Animated GIFs Free" />
+    <meta name="twitter:description" content="Download animated GIFs from any Pinterest pin for free. No login, no app, instant save." />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I download a GIF from Pinterest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open the Pin with the GIF on Pinterest, copy its URL, and paste that link into PinViddl's Pinterest GIF downloader. Start the check, and if GIF content is available, download it to your device."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a Pinterest account to use PinViddl?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. You only need the URL of a public Pin. PinViddl doesn't require you to log in to Pinterest or create an account of its own."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I download Pinterest GIFs on my phone?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Copy the Pin link from the Pinterest app or your mobile browser, then paste it into PinViddl the same way you would on desktop. Where the downloaded file is saved afterward depends on your phone and browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to install an app or browser extension?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. PinViddl runs in your browser, so there's nothing to install. You paste the link, check the Pin, and download directly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why isn't my Pinterest GIF downloading?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most common reasons are pasting a board, profile, or search link instead of a Pin URL, or the Pin being private, deleted, or temporarily unavailable. Try opening the Pin again, copying a fresh link, and pasting it once more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is every animated-looking Pin actually a GIF file?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not necessarily. People often call any looping animation on Pinterest a GIF, even when it isn't technically stored as one. PinViddl checks the Pin for GIF content specifically and shows you what's available."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What Pinterest link should I paste into the GIF downloader?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The direct URL of the Pin containing the GIF — not a link to a board, a profile, or a search results page."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this tool for Pinterest images or videos too?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This page is built for GIFs specifically. For static photos, use the Pinterest Image Downloader; for videos, use the Pinterest Video Downloader."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.1);
+            border: 1px solid rgba(230,0,35,0.25);
+            border-radius: 999px;
+            color: #ff3654;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 5px 14px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        .page-badge svg { stroke: #ff3654; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Video</a>
+                <a href="/pinterest-image-downloader.html">Image</a>
+                <a href="/pinterest-gif-downloader.html">GIF</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero font-sans">
+            <div class="page-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
+                GIF Downloader
+            </div>
+            <h1>Pinterest GIF Downloader</h1>
+            <p>Save any Pinterest animated GIF in its original quality — instantly, for free, with no account needed.</p>
+
+            <!-- Tool switcher -->
+            <div class="tool-tabs">
+                <a href="/" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    Video
+                </a>
+                <a href="/pinterest-image-downloader.html" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Image
+                </a>
+                <a href="/pinterest-gif-downloader.html" class="tool-tab active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
+                    GIF
+                </a>
+            </div>
+        </section>
+
+        <!-- Downloader -->
+        <section class="glass-card">
+            <form id="downloader-form" class="downloader-form">
+                <div class="input-container">
+                    <input
+                        type="url"
+                        id="pinterest-url"
+                        placeholder="Paste Pinterest GIF pin link (e.g., https://pin.it/abcde or pinterest.com/pin/123...)"
+                        required
+                    />
+                    <div class="input-action-buttons">
+                        <button type="button" id="paste-btn" class="action-btn">Paste</button>
+                        <button type="button" id="clear-btn" class="action-btn">Clear</button>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download GIF
+                </button>
+            </form>
+
+            <!-- Progress -->
+            <div id="spinner" class="spinner-container">
+                <div class="progress-header">
+                    <span class="loader-text">Extracting animated source</span>
+                    <strong id="progress-percent">0%</strong>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="Loading media" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="results-container" class="results-container" style="margin-top: 32px;">
+                <div class="preview-grid">
+                    <div id="media-preview" class="media-frame"></div>
+                    <div class="download-details">
+                        <div id="dl-options" class="dl-options"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="new-download-btn" class="new-download-btn">Download another GIF</button>
+        </section>
+
+    </main>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content container">
+
+        <div class="seo-block">
+            <h2>What This Tool Actually Does</h2>
+            <p>The Pinterest GIF downloader works from one input: the URL of a Pinterest Pin. Paste that link in, and PinViddl checks the Pin for GIF content. When there's an animated GIF available, it's shown back to you as a downloadable file.</p>
+            <p>You don't need a Pinterest account, and you don't need to know how the Pin was originally posted. The tool has one job — take a public Pin link and hand back the animated content on it, when that content is there to find.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>How to Download a GIF from Pinterest</h2>
+            <ol class="seo-list">
+                <li>Find the Pin with the GIF you want on Pinterest.</li>
+                <li>Open the Pin itself, not the board it's saved to.</li>
+                <li>Copy the Pin's URL from your address bar or its share menu.</li>
+                <li>Come back to PinViddl's Pinterest GIF downloader.</li>
+                <li>Paste the link into the box.</li>
+                <li>Let PinViddl check the Pin for GIF content.</li>
+                <li>Download the file once it's ready.</li>
+            </ol>
+            <p>No sign-up step, no extra tab to open — just those seven steps.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>What Kind of Pinterest Link Do I Need?</h2>
+            <p>PinViddl needs the URL of the specific Pin that holds the GIF — not a link to a board, a profile, or a Pinterest search results page. A Pin's own URL opens that one piece of content by itself, with its description, comments, and save button attached to it. A board link, by contrast, opens a whole collection of Pins.</p>
+            <p>If you're ever unsure which link you have, open the Pin directly on Pinterest and copy the URL from your browser's address bar or the Pin's own share option. That's the link the GIF downloader is looking for.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Downloading Pinterest GIFs on Mobile</h2>
+            <p>The steps are the same on a phone, just laid out on a smaller screen. Open the Pinterest app or pinterest.com in your mobile browser, find the Pin with the GIF, and use the share option to copy its link. Switch over to PinViddl, paste that link into the GIF downloader, and start the check.</p>
+            <p>Once the GIF is ready, tap to download it. Exactly where it lands afterward — your Photos app, a Downloads folder, or a save prompt — depends on your phone and browser, so it's worth checking your device's usual download location if the file doesn't show up right away.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Why Pinterest GIFs Are Often Actually MP4 Files</h2>
+            <p>This surprises a lot of people: when you upload a GIF to Pinterest, Pinterest converts it to a short, looping MP4 video before storing it. MP4 files are significantly smaller than GIFs at the same resolution — a 3-second animation that might be 8MB as a GIF can be under 500KB as an MP4 — so Pinterest made this conversion a default part of how it handles animated content.</p>
+            <p>The result is that the file PinViddl retrieves for an animated Pin is usually an MP4, not a .gif file. It plays identically to the original — same loop, same animation, no sound — but the container format is different. If you need an actual .gif file for a specific use (like embedding in a tool that only accepts GIFs), you'll need to convert the MP4 afterwards using a separate converter. PinViddl gives you what Pinterest is storing, which is the MP4.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>How to Tell a GIF from a Video on Pinterest</h2>
+            <p>Both GIFs and short videos loop on Pinterest, which makes them easy to confuse at a glance. The clearest way to distinguish them:</p>
+            <ul class="seo-list">
+                <li><strong>GIFs loop silently.</strong> There's no volume icon, no audio track, and no scrubbing progress bar. The animation repeats automatically without any controls visible.</li>
+                <li><strong>Videos have playback controls.</strong> A play/pause button appears on the Pin, and most video Pins also have a muted audio icon that you can toggle. Some have a visible duration counter.</li>
+                <li><strong>GIFs tend to be shorter.</strong> Most animated GIFs on Pinterest run between 1 and 5 seconds. Video Pins range from a few seconds to several minutes.</li>
+            </ul>
+            <p>If the Pin you want has a progress bar or a volume control, it's a video — use the <a href="/" style="color:#e60023;text-decoration:none;">Pinterest video downloader</a> for that. If it loops silently with no controls, you're in the right place.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Animation Quality — Frame Rate and Resolution</h2>
+            <p>The quality of a downloaded Pinterest GIF depends entirely on what was uploaded originally and how Pinterest's conversion process handled it. Pinterest's MP4 conversion generally preserves the original frame rate and resolution, but it does apply its own compression during conversion — so very large or high-frame-rate GIFs may come out slightly softer than the source file that was uploaded.</p>
+            <p>PinViddl retrieves exactly what Pinterest is serving for that Pin. It doesn't decode or re-encode the animation, add or remove frames, or alter the loop behaviour. If the animation looks smooth on the Pinterest page itself, the downloaded file will match that quality. If it already looks choppy on Pinterest, that quality was baked in during the upload conversion.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Wrong Tool? Here's Where to Go Instead</h2>
+            <p>This page checks Pins specifically for animated GIF content. If what you're trying to save isn't an animation, one of the other PinViddl tools is the right fit:</p>
+            <div class="seo-tool-links">
+                <a href="/pinterest-image-downloader.html" class="seo-tool-card">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <div>
+                        <strong>Pinterest Image Downloader</strong>
+                        <span>Still photo or graphic — completely static, no looping.</span>
+                    </div>
+                </a>
+                <a href="/" class="seo-tool-card">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    <div>
+                        <strong>Pinterest Video Downloader</strong>
+                        <span>Has a play button and audio — it's a video Pin, not a GIF.</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="seo-block">
+            <h2>When a Pinterest GIF Download Doesn't Work</h2>
+            <ul class="seo-list">
+                <li><strong>The link is a board or profile URL, not a Pin URL.</strong> A Pin URL contains <code>/pin/</code> followed by a numeric ID. Board links open a collection of Pins, not the individual content you want.</li>
+                <li><strong>The Pin was deleted or set to private.</strong> Once a Pin is removed or restricted, its animated content is gone from Pinterest's public pages — no tool can retrieve what isn't there.</li>
+                <li><strong>The Pin is actually a video, not a GIF.</strong> If the Pin has audio or a visible progress bar, paste it into the <a href="/" style="color:#e60023;text-decoration:none;">Pinterest video downloader</a> instead.</li>
+                <li><strong>The URL was cut off during copying.</strong> This happens on some mobile apps when the clipboard cuts a long URL short. Go back to the Pin and copy the link again directly from the share option.</li>
+            </ul>
+        </div>
+
+        <div class="seo-block">
+            <h2>No Screen Recording Required</h2>
+            <p>Before tools like PinViddl existed, the common workaround for saving a Pinterest GIF was to screen-record the loop playing — a clunky process that produces a video file rather than the original animation, with screen UI baked in and quality degraded by the recording layer.</p>
+            <p>PinViddl skips that entirely. Paste the Pin link, and the actual animation file that Pinterest stores comes back directly. No screen recording, no extra editing step, no loss of quality from the recording process itself.</p>
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>How do I download a GIF from Pinterest?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">Open the Pin containing the animation on Pinterest, copy the Pin's URL from the share menu or address bar, and paste it into the input field above. PinViddl checks the Pin for animated content and returns the file for download — no Pinterest login needed.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Why does my downloaded Pinterest GIF come as an MP4?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">Pinterest automatically converts uploaded GIFs into looping MP4 videos when they're saved to its servers — MP4 compresses the same animation far more efficiently than the GIF format. PinViddl retrieves what Pinterest is actually storing, which is that MP4. The loop and animation are identical; only the file container is different. To get a .gif file, use a free MP4-to-GIF converter after downloading.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Will the animation loop correctly after downloading?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">Yes. The MP4 file Pinterest stores is encoded as a seamless loop — the same way it plays on the Pin page. Most video players and browsers will loop it automatically. If yours doesn't loop by default, set the player to repeat or use a GIF converter to produce a true looping GIF file.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Is every animated-looking Pin actually a GIF?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">No. Some animated Pins are short video clips with audio rather than silent looping GIFs. The clearest sign: if the Pin has a volume icon or a scrubbing progress bar, it's a video Pin — use the <a href="/" style="color:#e60023;text-decoration:none;">Pinterest video downloader</a> for those. This page handles silent, looping animated content only.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Can I download Pinterest GIFs on my phone?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">Yes. Copy the Pin link from the Pinterest app's share option, open PinViddl in your phone's browser, paste the link, and process. The downloaded MP4 file lands in your Downloads folder on Android or your Files app on iPhone. To add it to your Camera Roll on iOS, tap Share on the file and choose Save Video.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Why isn't my Pinterest GIF downloading?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">Check three things: first, that you pasted a Pin URL (containing <code style="background:rgba(255,255,255,0.05);border:1px solid #333;border-radius:4px;color:#ff3654;font-size:0.85em;padding:1px 6px;">/pin/</code>) rather than a board or profile URL; second, that the Pin is still publicly visible on Pinterest; and third, that the Pin is actually animated — if it has audio or a progress bar, it's a video rather than a GIF and needs the video downloader instead.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>What Pinterest link should I paste into the GIF downloader?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">The URL of the individual Pin itself — for example <code style="background:rgba(255,255,255,0.05);border:1px solid #333;border-radius:4px;color:#ff3654;font-size:0.85em;padding:1px 6px;">pinterest.com/pin/123456789</code> or a shortened <code style="background:rgba(255,255,255,0.05);border:1px solid #333;border-radius:4px;color:#ff3654;font-size:0.85em;padding:1px 6px;">pin.it/</code> link. Board URLs, profile URLs, and Pinterest search pages don't point to specific content and won't work.</div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger">
+                    <span>Can I use this tool for Pinterest images or videos too?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-inner">No — each PinViddl tool handles one media type. Still images go through the <a href="/pinterest-image-downloader.html" style="color:#e60023;text-decoration:none;">Pinterest image downloader</a>, and Pins with audio or a full playback bar go through the <a href="/" style="color:#e60023;text-decoration:none;">Pinterest video downloader</a>. Using the right tool gets you the correct file format the first time.</div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/">Back to Home</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

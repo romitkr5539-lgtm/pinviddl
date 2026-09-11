@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>Contact - PinViddl</title>
+    <meta name="description" content="Get in touch with the PinViddl team. Report a bug, ask a question, or share feedback about our free Pinterest downloader." />
+    <link rel="canonical" href="https://pinviddl.com/contact" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        .page-hero {
+            padding: 60px 0 36px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+        .page-hero h1::after {
+            display: block;
+            width: 42px;
+            height: 5px;
+            margin: 18px auto 0;
+            border-radius: 4px;
+            background: #e60023;
+            content: "";
+        }
+        .page-hero p {
+            color: #a4a4a4;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 28px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        .contact-form-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 24px;
+            padding: 40px 44px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+        }
+        .contact-form-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #d1d1d1;
+            margin-bottom: 7px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: #0c0c0c;
+            border: 1px solid #3c3c3c;
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            padding: 13px 16px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+            appearance: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #555;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #e60023;
+            box-shadow: 0 0 0 3px rgba(230,0,35,0.14);
+        }
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 38px;
+            cursor: pointer;
+        }
+        .form-group select option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .submit-contact-btn {
+            width: 100%;
+            background: #e60023;
+            border: none;
+            border-radius: 14px;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 22px rgba(230,0,35,0.24);
+            margin-top: 6px;
+        }
+        .submit-contact-btn:hover {
+            background: #ff1744;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(230,0,35,0.34);
+        }
+        .success-msg {
+            display: none;
+            background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 12px;
+            color: #4ade80;
+            font-size: 0.95rem;
+            padding: 14px 18px;
+            margin-top: 18px;
+            text-align: center;
+        }
+        .flash-message {
+            position: fixed;
+            top: 92px;
+            right: 24px;
+            z-index: 100;
+            display: none;
+            max-width: min(380px, calc(100vw - 48px));
+            padding: 15px 18px;
+            border: 1px solid rgba(74, 222, 128, 0.45);
+            border-radius: 14px;
+            background: #181818;
+            color: #4ade80;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+            font-size: 0.9rem;
+            font-weight: 600;
+            animation: flashIn 0.35s ease-out both;
+        }
+        .flash-message.visible {
+            display: block;
+        }
+        @keyframes flashIn {
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Sidebar info cards */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .info-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+        }
+        .info-card-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(230,0,35,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .info-card-icon svg {
+            stroke: #e60023;
+            width: 20px;
+            height: 20px;
+        }
+        .info-card h3 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .info-card p {
+            color: #a4a4a4;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .info-card a {
+            color: #e60023;
+            text-decoration: none;
+        }
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+        .response-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.08);
+            border: 1px solid rgba(230,0,35,0.18);
+            border-radius: 999px;
+            color: #ff3654;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            margin-top: 10px;
+        }
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #e60023;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        @media (max-width: 768px) {
+            .contact-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .contact-form-card { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="flash-message" class="flash-message" role="status" aria-live="polite">
+        Message sent successfully. We'll get back to you within 24-48 hours.
+    </div>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Contact Us</h1>
+            <p>Have a question, spotted a bug, or want to share feedback? We'd love to hear from you.</p>
+        </section>
+
+        <div class="contact-layout">
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <h2>Send a Message</h2>
+                <form id="contact-form" action="https://formsubmit.co/support@pinviddl.com" method="POST">
+                    <!-- Formsubmit config -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - PinViddl" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_next" value="https://pinviddl.com/contact.html?sent=1" />
+                    <input type="text" name="_honey" style="display:none" />
+
+                    <div class="form-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Johnson" required autocomplete="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <select id="contact-subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Feature Request">Feature Request</option>
+                            <option value="DMCA / Copyright Concern">DMCA / Copyright Concern</option>
+                            <option value="Partnership / Business">Partnership / Business</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Describe your issue or question in detail..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-contact-btn">Send Message</button>
+                    <div id="success-msg" class="success-msg" role="alert" aria-live="polite">
+                        ✓ Message sent! We'll get back to you within 24–48 hours.
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="contact-sidebar">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>For direct enquiries you can reach us at <a href="mailto:support@pinviddl.com">support@pinviddl.com</a></p>
+                    <div class="response-badge"><span class="badge-dot"></span> Usually responds in 24–48 hrs</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Report a Bug</h3>
+                    <p>If a pin URL isn't working, please include the full URL in your message so we can investigate promptly.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </div>
+                    <h3>DMCA / Copyright</h3>
+                    <p>PinViddl does not host any media. For copyright concerns, please use the subject "DMCA / Copyright Concern" in your message and include relevant details.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/">Back to Home</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+        });
+
+        // Show success message if redirected back after submission
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            const msg = document.getElementById('success-msg');
+            if (msg) msg.style.display = 'block';
+            const flash = document.getElementById('flash-message');
+            if (flash) {
+                flash.classList.add('visible');
+                setTimeout(() => flash.classList.remove('visible'), 5000);
+            }
+        }
+    </script>
+</body>
+</html>

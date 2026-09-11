@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>Disclaimer & Copyright Notice - PinViddl</title>
+    <meta name="description" content="PinViddl's Disclaimer covers no-affiliation with Pinterest, copyright ownership of downloaded media, limitations of liability, and the tool's intended use." />
+    <link rel="canonical" href="https://pinviddl.com/disclaimer" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        .page-hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+        .page-hero h1::after {
+            display: block;
+            width: 42px;
+            height: 5px;
+            margin: 18px auto 0;
+            border-radius: 4px;
+            background: #e60023;
+            content: "";
+        }
+        .page-hero p {
+            color: #a4a4a4;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+        /* Table of contents */
+        .toc-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+        }
+        .toc-card h2 {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #888;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            counter-reset: toc-item;
+        }
+        .toc-list li { counter-increment: toc-item; }
+        .toc-list a {
+            color: #a4a4a4;
+            font-size: 0.87rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .toc-list a:hover { color: #e60023; }
+        .toc-list a::before {
+            content: counter(toc-item) ".";
+            color: #e60023;
+            font-weight: 700;
+            font-size: 0.8rem;
+            min-width: 18px;
+        }
+        /* Policy card */
+        .policy-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 24px;
+            padding: 44px 48px;
+            margin-bottom: 60px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+        }
+        .policy-section {
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #222;
+        }
+        .policy-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .section-num {
+            display: inline-block;
+            background: rgba(230,0,35,0.1);
+            color: #e60023;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            margin-bottom: 8px;
+            letter-spacing: 0.06em;
+        }
+        .policy-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 14px;
+        }
+        .policy-card h3 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #d1d1d1;
+            margin: 20px 0 8px;
+        }
+        .policy-card p {
+            color: #a4a4a4;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .policy-card p:last-child { margin-bottom: 0; }
+        .policy-card ul, .policy-card ol {
+            margin: 10px 0 14px 20px;
+        }
+        .policy-card li {
+            color: #a4a4a4;
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+        .policy-card strong { color: #d1d1d1; }
+        .policy-card a {
+            color: #e60023;
+            text-decoration: none;
+        }
+        .policy-card a:hover { text-decoration: underline; }
+        /* Alert box */
+        .alert-box {
+            background: rgba(230,0,35,0.06);
+            border: 1px solid rgba(230,0,35,0.22);
+            border-left: 4px solid #e60023;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+        .alert-box p {
+            color: #f87171 !important;
+            margin: 0 !important;
+            font-size: 0.9rem !important;
+            font-weight: 500;
+        }
+        /* Info box */
+        .info-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #2b2b2b;
+            border-left: 3px solid #e60023;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        .info-box p {
+            margin: 0 !important;
+            font-size: 0.88rem !important;
+        }
+        /* Allowed / Not allowed grid */
+        .use-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .use-col {
+            background: #1b1b1b;
+            border: 1px solid #2b2b2b;
+            border-radius: 12px;
+            padding: 18px 20px;
+        }
+        .use-col h4 {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .use-col.allowed h4 { color: #4ade80; }
+        .use-col.not-allowed h4 { color: #f87171; }
+        .use-col ul {
+            margin: 0 0 0 16px;
+            padding: 0;
+        }
+        .use-col li {
+            font-size: 0.85rem !important;
+            margin-bottom: 6px !important;
+        }
+        /* Last updated badge */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.08);
+            color: #ff3654;
+            border: 1px solid rgba(230,0,35,0.2);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 768px) {
+            .policy-card { padding: 28px 22px; }
+            .use-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Disclaimer &amp; Copyright Notice</h1>
+            <p>Limitations of liability, no-affiliation notice, copyright ownership, and intended use of PinViddl.</p>
+        </section>
+
+        <!-- Table of contents -->
+        <div class="toc-card">
+            <h2>Contents</h2>
+            <ol class="toc-list">
+                <li><a href="#general">General Disclaimer</a></li>
+                <li><a href="#no-affiliation">No Affiliation with Pinterest</a></li>
+                <li><a href="#copyright">Copyright Ownership</a></li>
+                <li><a href="#permitted-use">Permitted &amp; Prohibited Use</a></li>
+                <li><a href="#liability">Limitation of Liability</a></li>
+                <li><a href="#dmca">DMCA &amp; Copyright Complaints</a></li>
+                <li><a href="#availability">Service Availability</a></li>
+                <li><a href="#accuracy">Accuracy of Information</a></li>
+                <li><a href="#external-links">External Links</a></li>
+                <li><a href="#governing-law">Governing Law</a></li>
+                <li><a href="#changes-disclaimer">Changes to This Disclaimer</a></li>
+                <li><a href="#contact-disclaimer">Contact</a></li>
+            </ol>
+        </div>
+
+        <div class="policy-card">
+            <span class="last-updated">Last Updated: September 11, 2026</span>
+
+            <!-- 1. General -->
+            <div class="policy-section" id="general">
+                <span class="section-num">01</span>
+                <h2>General Disclaimer</h2>
+                <p>PinViddl (pinviddl.com) is a free, browser-based utility that retrieves publicly available media from Pinterest Pin pages. The service is provided strictly on an <strong>"as is"</strong> and <strong>"as available"</strong> basis. By accessing or using PinViddl, you acknowledge that you have read, understood, and agree to be bound by the terms set out in this Disclaimer.</p>
+                <p>We make no warranty — express, implied, statutory, or otherwise — that the service will be uninterrupted, error-free, free from viruses or harmful components, or that the results obtained through use of the service will be accurate, reliable, or suitable for any particular purpose.</p>
+                <p>Your use of PinViddl is entirely at your own risk. We are not liable for any harm — direct, indirect, consequential, or incidental — that results from that use.</p>
+            </div>
+
+            <!-- 2. No Affiliation -->
+            <div class="policy-section" id="no-affiliation">
+                <span class="section-num">02</span>
+                <h2>No Affiliation with Pinterest</h2>
+                <div class="alert-box">
+                    <p>PinViddl is an independent, third-party tool. It is not affiliated with, endorsed by, sponsored by, or in any way officially connected to Pinterest, Inc. or any of its subsidiaries or affiliates.</p>
+                </div>
+                <p>The names "Pinterest" and "Pin" and the Pinterest logo are registered trademarks of Pinterest, Inc. These marks are referenced on this website solely for descriptive and nominative purposes — to explain what PinViddl does (process Pinterest Pin links) — and such references do not imply any association with or endorsement by Pinterest, Inc.</p>
+                <p>PinViddl does not use Pinterest's official API. It reads publicly accessible web pages in the same way any standard browser would. We are not a partner, developer licensee, or authorised representative of Pinterest in any capacity.</p>
+            </div>
+
+            <!-- 3. Copyright -->
+            <div class="policy-section" id="copyright">
+                <span class="section-num">03</span>
+                <h2>Copyright Ownership of Downloaded Media</h2>
+                <p>All media content available on Pinterest — including but not limited to videos, photographs, illustrations, GIFs, and graphics — is the intellectual property of the individual or organisation that created or uploaded it. PinViddl does not create, host, store, or own any of this content.</p>
+                <p>PinViddl functions as a technical retrieval tool. It reads publicly accessible Pinterest pages and extracts the media file URL embedded in them, then facilitates the transfer of that file to the requesting user's device. This process is analogous to a user manually copying a direct media URL from a browser's developer tools.</p>
+
+                <h3>What downloading does not give you</h3>
+                <p>Saving a copy of a media file to your device does not transfer, assign, or license any intellectual property rights to you. The copyright in the downloaded content remains with the original creator. Specifically, downloading does not give you the right to:</p>
+                <ul>
+                    <li>Republish the content on any platform or website without the creator's permission.</li>
+                    <li>Use the content in commercial projects, advertising, products, or services.</li>
+                    <li>Modify, adapt, or create derivative works from the content.</li>
+                    <li>Claim authorship or ownership of the content.</li>
+                    <li>Distribute the content to others in any form, including via messaging apps, email, or file-sharing services.</li>
+                </ul>
+                <p>If you wish to use a downloaded piece of media for any purpose beyond personal, private reference, you must obtain explicit permission from the rights holder. In many cases this means contacting the original creator directly.</p>
+            </div>
+
+            <!-- 4. Permitted Use -->
+            <div class="policy-section" id="permitted-use">
+                <span class="section-num">04</span>
+                <h2>Permitted &amp; Prohibited Use</h2>
+                <p>PinViddl is built for personal, non-commercial use. The following illustrates the boundary between acceptable and unacceptable use:</p>
+                <div class="use-grid">
+                    <div class="use-col allowed">
+                        <h4>✓ Permitted</h4>
+                        <ul>
+                            <li>Saving a recipe video for offline personal reference</li>
+                            <li>Downloading a wallpaper image for personal device use</li>
+                            <li>Saving a workout clip to watch later without internet</li>
+                            <li>Downloading a design reference image for personal mood-boarding</li>
+                            <li>Saving a GIF animation for personal entertainment</li>
+                            <li>Downloading your own content that you uploaded to Pinterest</li>
+                        </ul>
+                    </div>
+                    <div class="use-col not-allowed">
+                        <h4>✗ Prohibited</h4>
+                        <ul>
+                            <li>Reposting downloaded content on social media without credit or permission</li>
+                            <li>Using downloaded media in commercial projects or advertising</li>
+                            <li>Bulk or automated downloading of content (scraping)</li>
+                            <li>Downloading private or login-restricted content</li>
+                            <li>Using downloaded content to train AI or machine learning models</li>
+                            <li>Any use that violates Pinterest's Terms of Service or applicable copyright law</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <p>When in doubt about whether a specific use is permissible, contact the content creator directly before proceeding. This is the safest approach regardless of which download tool you use.</p>
+                </div>
+            </div>
+
+            <!-- 5. Limitation of Liability -->
+            <div class="policy-section" id="liability">
+                <span class="section-num">05</span>
+                <h2>Limitation of Liability</h2>
+                <p>To the fullest extent permitted by applicable law, PinViddl and its operators, developers, contributors, and affiliates shall not be liable for any:</p>
+                <ul>
+                    <li><strong>Direct damages</strong> — including but not limited to loss of data, loss of revenue, or costs incurred in relation to use of the service.</li>
+                    <li><strong>Indirect or consequential damages</strong> — including loss of profits, loss of goodwill, loss of opportunity, or any other economic loss.</li>
+                    <li><strong>Damages arising from unauthorised access</strong> — including unauthorised access to or alteration of your transmissions, data, or device.</li>
+                    <li><strong>Damages arising from the content itself</strong> — including any liability arising from the media you download and how you use it.</li>
+                    <li><strong>Damages caused by third-party actions</strong> — including actions by Pinterest, Inc. or any other third party that affect your ability to use the service or the content you have downloaded.</li>
+                </ul>
+                <p>This limitation of liability applies regardless of the legal theory on which a claim is based — whether in contract, tort (including negligence), strict liability, or otherwise — and even if we have been advised of the possibility of such damages.</p>
+                <p>Some jurisdictions do not allow the exclusion or limitation of certain damages. In those jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
+            </div>
+
+            <!-- 6. DMCA -->
+            <div class="policy-section" id="dmca">
+                <span class="section-num">06</span>
+                <h2>DMCA &amp; Copyright Complaints</h2>
+                <p>PinViddl does not host, store, or serve media content. All media files remain on Pinterest's servers and are accessed directly by the user's browser through the URLs we retrieve. Because we do not host content, we are not a traditional "hosting provider" under the DMCA's safe harbour provisions.</p>
+                <p>That said, we take copyright seriously. If you believe that PinViddl is being used in a manner that infringes your copyright — for example, if our tool is being used to facilitate mass unauthorised distribution of your work — please contact us with the following information:</p>
+                <ul>
+                    <li>Your name and contact information (email address).</li>
+                    <li>A description of the copyrighted work you claim has been infringed.</li>
+                    <li>A description of how PinViddl is facilitating the alleged infringement.</li>
+                    <li>A statement that you have a good faith belief that the use is not authorised by the copyright owner, its agent, or the law.</li>
+                    <li>A statement that the information in your notice is accurate, and that you are the copyright owner or authorised to act on their behalf.</li>
+                </ul>
+                <p>Send DMCA / copyright notices via our <a href="/contact.html">Contact page</a> using the subject "DMCA / Copyright Concern". We will review and respond within 10 business days.</p>
+                <p>For content that is live on Pinterest itself and not specifically related to our tool, please direct your complaint to Pinterest directly at their <a href="https://help.pinterest.com/en/article/report-a-pin" target="_blank" rel="noopener noreferrer">Pin reporting page</a>.</p>
+            </div>
+
+            <!-- 7. Service Availability -->
+            <div class="policy-section" id="availability">
+                <span class="section-num">07</span>
+                <h2>Service Availability</h2>
+                <p>PinViddl is provided free of charge with no service level agreement (SLA). We do not guarantee:</p>
+                <ul>
+                    <li>Uninterrupted availability of the service at any time.</li>
+                    <li>That the service will successfully process any given Pinterest URL.</li>
+                    <li>That the service will remain compatible with future changes Pinterest makes to its platform.</li>
+                    <li>That the quality, format, or resolution of retrieved media will meet any particular standard.</li>
+                </ul>
+                <p>PinViddl depends on the structure of Pinterest's publicly accessible pages. Pinterest updates its platform regularly, and those updates can — without warning — break functionality in third-party tools like ours. When this happens, we work to restore compatibility as quickly as possible, but cannot guarantee a specific timeframe.</p>
+                <p>We reserve the right to modify, suspend, limit, or permanently discontinue the service at any time, for any reason, without prior notice or liability.</p>
+            </div>
+
+            <!-- 8. Accuracy -->
+            <div class="policy-section" id="accuracy">
+                <span class="section-num">08</span>
+                <h2>Accuracy of Information</h2>
+                <p>The information published on pinviddl.com — including blog posts, how-to guides, and FAQs — is provided for general informational purposes only. While we aim to keep content accurate and up to date, we make no representations or warranties about the completeness, accuracy, reliability, suitability, or availability of any information on the site.</p>
+                <p>Information about Pinterest's platform, features, or policies may become outdated as Pinterest updates its service. We are not responsible for any decisions made in reliance on information from this website that has since become inaccurate.</p>
+            </div>
+
+            <!-- 9. External Links -->
+            <div class="policy-section" id="external-links">
+                <span class="section-num">09</span>
+                <h2>External Links</h2>
+                <p>PinViddl may contain links to external websites, including Pinterest itself, third-party downloader tools, and reference documentation. These links are provided for convenience and informational purposes only.</p>
+                <p>We have no control over the content, privacy practices, security, or availability of external websites. A link from PinViddl to an external site does not constitute an endorsement of that site, its content, or its operators. We accept no responsibility or liability for any loss or damage that may arise from your use of an external website reached through a link on this site.</p>
+            </div>
+
+            <!-- 10. Governing Law -->
+            <div class="policy-section" id="governing-law">
+                <span class="section-num">10</span>
+                <h2>Governing Law</h2>
+                <p>This Disclaimer is governed by and construed in accordance with applicable law. Users accessing PinViddl from different jurisdictions are responsible for compliance with local laws to the extent they are applicable. The fact that a particular use of the service may be lawful in one jurisdiction does not mean it is lawful in another.</p>
+                <p>Nothing in this Disclaimer is intended to exclude or limit rights that cannot be excluded or limited under applicable consumer protection law in your jurisdiction.</p>
+            </div>
+
+            <!-- 11. Changes -->
+            <div class="policy-section" id="changes-disclaimer">
+                <span class="section-num">11</span>
+                <h2>Changes to This Disclaimer</h2>
+                <p>We reserve the right to update or modify this Disclaimer at any time. Changes take effect immediately upon publication on this page. The "Last Updated" date at the top indicates when the most recent revision was made.</p>
+                <p>Your continued use of PinViddl after any change constitutes your acceptance of the revised Disclaimer. If you do not agree with any part of the updated Disclaimer, please stop using the service.</p>
+            </div>
+
+            <!-- 12. Contact -->
+            <div class="policy-section" id="contact-disclaimer">
+                <span class="section-num">12</span>
+                <h2>Contact</h2>
+                <p>For questions about this Disclaimer, copyright concerns, DMCA notices, or abuse reports, please visit our <a href="/contact.html">Contact page</a>. Include as much relevant detail as possible so we can respond efficiently. We aim to respond to legal and copyright matters within 10 business days.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/">Back to Home</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
+    <title>About PinViddl - What It Is, How It Works, and Why It Exists</title>
+    <meta name="description" content="PinViddl is a free, browser-based Pinterest downloader for videos, images, and GIFs. Learn what the tool does, how it works technically, and who it's built for." />
+    <link rel="canonical" href="https://pinviddl.com/about" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+        /* Hero */
+        .about-hero {
+            padding: 64px 0 48px;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .about-hero h1 span { color: #e60023; }
+        .about-hero p {
+            color: #a4a4a4;
+            font-size: 1.05rem;
+            max-width: 540px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1b1b1b;
+            border: 1px solid #2b2b2b;
+            border-radius: 999px;
+            color: #a4a4a4;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+        }
+        .hero-badge svg { stroke: #e60023; width: 13px; height: 13px; }
+
+        /* Section layout */
+        .about-section {
+            margin-bottom: 32px;
+        }
+        .about-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 24px;
+            padding: 40px 44px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+        }
+        .about-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-card h2 .h2-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(230,0,35,0.1);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .about-card h2 .h2-icon svg { stroke: #e60023; width: 17px; height: 17px; }
+        .about-card p {
+            color: #a4a4a4;
+            font-size: 0.93rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .about-card p:last-child { margin-bottom: 0; }
+        .about-card strong { color: #d1d1d1; }
+        .about-card a { color: #e60023; text-decoration: none; }
+        .about-card a:hover { text-decoration: underline; }
+
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: #141414;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            padding: 24px 18px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.5);
+        }
+        .stat-num {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #e60023;
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-desc {
+            color: #777;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        /* How it works steps */
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 22px;
+        }
+        .how-item {
+            background: #1b1b1b;
+            border: 1px solid #2b2b2b;
+            border-radius: 16px;
+            padding: 22px 20px;
+            position: relative;
+        }
+        .how-num {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(230,0,35,0.15);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .how-item h3 {
+            font-family: var(--font-heading);
+            font-size: 0.93rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .how-item p {
+            color: #777;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            margin: 0 !important;
+        }
+
+        /* Feature grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 22px;
+        }
+        .feature-card {
+            background: #1b1b1b;
+            border: 1px solid #2b2b2b;
+            border-radius: 16px;
+            padding: 22px 20px;
+            transition: border-color 0.2s ease;
+        }
+        .feature-card:hover { border-color: rgba(230,0,35,0.3); }
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(230,0,35,0.08);
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .feature-icon svg { stroke: #e60023; width: 20px; height: 20px; }
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 0.93rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .feature-card p {
+            color: #777;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            margin: 0 !important;
+        }
+
+        /* Tool links */
+        .tool-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .tool-link-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #1b1b1b;
+            border: 1px solid #2b2b2b;
+            border-radius: 16px;
+            padding: 18px 20px;
+            text-decoration: none;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .tool-link-card:hover {
+            border-color: #e60023;
+            transform: translateY(-3px);
+        }
+        .tool-link-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(230,0,35,0.08);
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .tool-link-icon svg { stroke: #e60023; width: 20px; height: 20px; }
+        .tool-link-text strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+        .tool-link-text span {
+            color: #666;
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+
+        /* Principle list */
+        .principle-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 18px;
+        }
+        .principle-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .principle-dot {
+            width: 8px;
+            height: 8px;
+            background: #e60023;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+            box-shadow: 0 0 8px rgba(230,0,35,0.4);
+        }
+        .principle-item p {
+            margin: 0 !important;
+        }
+
+        /* CTA */
+        .cta-strip {
+            background: linear-gradient(135deg, rgba(230,0,35,0.1), rgba(230,0,35,0.03));
+            border: 1px solid rgba(230,0,35,0.18);
+            border-radius: 22px;
+            padding: 44px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .cta-strip h2 {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+        .cta-strip p {
+            color: #a4a4a4;
+            font-size: 0.95rem;
+            margin-bottom: 26px;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e60023;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 8px 22px rgba(230,0,35,0.28);
+        }
+        .cta-btn-primary:hover { background: #ff1744; transform: translateY(-2px); }
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #d1d1d1;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: 12px;
+            border: 1px solid #3b3b3b;
+            text-decoration: none;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+        .cta-btn-secondary:hover { border-color: #e60023; color: #fff; }
+
+        @media (max-width: 900px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .tool-links-grid { grid-template-columns: 1fr; }
+            .how-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .about-card { padding: 26px 22px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid { grid-template-columns: 1fr; }
+            .cta-strip { padding: 32px 22px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl.png" alt="pinviddl" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="about-hero">
+            <h1>About <span>PinViddl</span></h1>
+            <p>A free, browser-based tool for saving Pinterest videos, images, and GIFs — built to do one thing well, without asking anything of you in return.</p>
+            <div class="hero-badges">
+                <span class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    100% Free
+                </span>
+                <span class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    No Login Required
+                </span>
+                <span class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    Works on Any Device
+                </span>
+                <span class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    No App to Install
+                </span>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <span class="stat-num">3</span>
+                <span class="stat-desc">Media types supported — video, image, and GIF</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">0</span>
+                <span class="stat-desc">Accounts, sign-ups, or logins required</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">0</span>
+                <span class="stat-desc">Files or URLs stored after your session ends</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num">∞</span>
+                <span class="stat-desc">Downloads — no daily limits or caps</span>
+            </div>
+        </div>
+
+        <!-- What PinViddl is -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </span>
+                    What PinViddl Is
+                </h2>
+                <p>PinViddl is a free, browser-based tool for downloading publicly available Pinterest content. You paste the URL of a Pinterest Pin — a video Pin, a photo Pin, or an animated GIF Pin — and PinViddl processes it and returns the media file for you to save to your device.</p>
+                <p>It runs entirely in your browser. There is no app to download, no account to create, no email address to hand over. You don't need a Pinterest account either. If the Pin is publicly visible on Pinterest, PinViddl can retrieve it.</p>
+                <p>PinViddl is an independent tool. It is not affiliated with, endorsed by, or connected to Pinterest, Inc. in any way. The name "Pinterest" is used purely to describe what the tool works with — processing Pinterest Pin URLs to retrieve the media attached to them.</p>
+            </div>
+        </div>
+
+        <!-- Why it exists -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    Why It Exists
+                </h2>
+                <p>Pinterest is a discovery platform — it's built for browsing and collecting ideas, not for saving media to your device. Pinterest doesn't offer a native download button for videos, and right-clicking images on the platform typically saves a compressed thumbnail rather than the full-resolution original. Saving content for offline use, personal reference, or creative work is unnecessarily hard.</p>
+                <p>PinViddl was built to solve that specific friction. The goal is a tool that gets out of your way: paste a link, get the file, done. No upsell to a premium tier, no "download limit reached" message after five files, no request for payment details to access HD quality.</p>
+                <p>That philosophy hasn't changed since the first version. Everything added since launch — media preview before downloading, live progress tracking, a dedicated image downloader, a dedicated GIF downloader — has been built around the same principle: make saving Pinterest content as direct as possible.</p>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    How It Works
+                </h2>
+                <p>PinViddl reads the public Pinterest page behind any Pin URL you provide — the same page your browser would load if you visited the link directly. It extracts the media URL embedded in that page and returns the actual file to your browser for download.</p>
+                <p>It doesn't log in to Pinterest on your behalf, access private content, or store anything you submit. The Pin URL is processed in memory for the duration of the request and discarded immediately after. Nothing is written to disk.</p>
+                <div class="how-grid">
+                    <div class="how-item">
+                        <div class="how-num">01</div>
+                        <h3>You paste the Pin URL</h3>
+                        <p>Copy the link from Pinterest's share menu or browser address bar and paste it into the input field.</p>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">02</div>
+                        <h3>PinViddl fetches the page</h3>
+                        <p>Our backend reads the public Pin page and extracts the direct URL of the media file embedded in it.</p>
+                    </div>
+                    <div class="how-item">
+                        <div class="how-num">03</div>
+                        <h3>You get the file</h3>
+                        <p>A preview appears along with a download button. The file saves directly to your device — no redirect, no new tab.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The three tools -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    Three Tools, One Purpose
+                </h2>
+                <p>Pinterest hosts three types of media, and each one requires a different retrieval approach. PinViddl splits them into three dedicated downloaders so each one is optimised for its format rather than trying to handle everything through a single fallback path.</p>
+                <div class="tool-links-grid">
+                    <a href="/" class="tool-link-card">
+                        <div class="tool-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                        </div>
+                        <div class="tool-link-text">
+                            <strong>Pinterest Video Downloader</strong>
+                            <span>Saves video Pins as MP4 files at the highest available resolution.</span>
+                        </div>
+                    </a>
+                    <a href="/pinterest-image-downloader.html" class="tool-link-card">
+                        <div class="tool-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <div class="tool-link-text">
+                            <strong>Pinterest Image Downloader</strong>
+                            <span>Retrieves the full-resolution image from any public photo Pin.</span>
+                        </div>
+                    </a>
+                    <a href="/pinterest-gif-downloader.html" class="tool-link-card">
+                        <div class="tool-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
+                        </div>
+                        <div class="tool-link-text">
+                            <strong>Pinterest GIF Downloader</strong>
+                            <span>Downloads animated Pins — handles Pinterest's GIF-to-MP4 conversion automatically.</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- What it doesn't do -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    What PinViddl Doesn't Do
+                </h2>
+                <p>Being clear about what a tool doesn't do is as important as listing what it does.</p>
+                <div class="principle-list">
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't store your Pin URLs.</strong> URLs you submit are processed in memory and discarded the moment the response is sent. Nothing is logged or written to a database.</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't access private content.</strong> PinViddl only reads publicly accessible Pinterest pages. Private boards, login-restricted Pins, and deleted content are outside its reach by design.</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't host or serve media files.</strong> Media files stay on Pinterest's servers. PinViddl retrieves the direct URL and your browser downloads the file from Pinterest directly, not from our infrastructure.</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't require a Pinterest account.</strong> PinViddl doesn't log in to Pinterest on your behalf and doesn't ask for your credentials under any circumstances.</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't run ads that track you.</strong> PinViddl does not integrate advertising networks, retargeting pixels, or social media tracking scripts on its pages.</p>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-dot"></div>
+                        <p><strong>It doesn't download entire boards.</strong> PinViddl processes one Pin URL at a time and is not designed for bulk or automated content extraction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </span>
+                    Features
+                </h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                        </div>
+                        <h3>Video as MP4</h3>
+                        <p>Pinterest video Pins are downloaded as clean MP4 files at the highest resolution Pinterest makes available for that Pin.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <h3>Full-Resolution Images</h3>
+                        <p>Image Pins are retrieved at full source resolution — not the compressed thumbnail Pinterest shows in feeds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M14 2v6h6"/></svg>
+                        </div>
+                        <h3>GIF & Animated Pins</h3>
+                        <p>Animated Pins are downloaded in the format Pinterest stores them — usually MP4, which plays identically to the original GIF animation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <h3>Media Preview</h3>
+                        <p>Before downloading, a live preview of the video, image, or animation is shown so you can confirm it's the right file.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h3>Live Progress Tracking</h3>
+                        <p>A real-time progress bar and percentage indicator shows processing status while the Pin is being retrieved.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        </div>
+                        <h3>Mobile-Optimised</h3>
+                        <p>The interface is designed for mobile use — large touch targets, responsive layout, and clipboard paste support in mobile browsers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsible use -->
+        <div class="about-section">
+            <div class="about-card">
+                <h2>
+                    <span class="h2-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                    </span>
+                    Responsible Use
+                </h2>
+                <p>PinViddl is built for personal use — saving content for offline reference, inspiration boards, or personal collections. It is not intended for mass downloading, commercial redistribution, or any use that infringes the rights of content creators.</p>
+                <p>Every piece of media on Pinterest belongs to its creator. Downloading a copy doesn't transfer any of those rights to you. If you want to reuse, republish, or build something with content you found on Pinterest, the right path is to contact the creator and get their permission.</p>
+                <p>For the full picture on copyright and intended use, see the <a href="/disclaimer.html">Disclaimer</a>. For information on how we handle your data, see the <a href="/privacy.html">Privacy Policy</a>.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-strip">
+            <h2>Ready to try it?</h2>
+            <p>Paste any public Pinterest Pin link and get the file in a few seconds — no sign-up, no cost.</p>
+            <div class="cta-btns">
+                <a href="/" class="cta-btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download a Video
+                </a>
+                <a href="/contact.html" class="cta-btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Other Tools</h3>
+                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
+                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
+                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/disclaimer.html">Disclaimer</a>
+                    <a href="/disclaimer.html">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about.html">About PinViddl</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/blog.html">Blog</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.classList.toggle('active', open);
+            toggle.setAttribute('aria-expanded', open);
+        });
+    </script>
+</body>
+</html>
