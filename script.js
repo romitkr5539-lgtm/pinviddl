@@ -359,11 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Render Pinterest Media Results
-    function showPreviewError(container) {
-        const el = createPreviewError();
-        container.appendChild(el);
-    }
-
     function createPreviewError() {
         const el = document.createElement('div');
         el.style.cssText = [
@@ -402,6 +397,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .substring(0, 30);
 
         // Preview Element Creation
+        // NEVER use i.pinimg.com directly — it blocks cross-origin requests.
+        // Always route through the Worker proxy which adds the correct headers.
         const proxyPreviewUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
 
         if (primaryMedia.type === 'video') {
@@ -413,24 +410,20 @@ document.addEventListener('DOMContentLoaded', () => {
             videoEl.preload = 'metadata';
             if (data.thumbnail) videoEl.poster = data.thumbnail;
             videoEl.src = proxyPreviewUrl;
-            let errorFired = false;
             videoEl.onerror = () => {
-                if (errorFired) return;
-                errorFired = true;
                 videoEl.remove();
                 mediaPreview.appendChild(createPreviewError());
             };
             mediaPreview.appendChild(videoEl);
 
         } else {
-            // Show a loading placeholder while the image is being verified
             const placeholder = document.createElement('div');
-            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:120px;color:#555;font-size:0.85rem;';
+            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:160px;color:#555;font-size:0.85rem;';
             placeholder.textContent = 'Loading preview…';
             mediaPreview.appendChild(placeholder);
 
-            // Validate through proxy via fetch — if content-type is image, render it
-            // If not (JSON error, HTML, 403), show the error state — never expose raw pinimg URL
+            // Fetch through proxy and check content-type before rendering
+            // This prevents broken/fake images from ever appearing
             fetch(proxyPreviewUrl)
                 .then(res => {
                     const ct = res.headers.get('content-type') || '';
@@ -440,10 +433,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(blob => {
                     const objectUrl = URL.createObjectURL(blob);
                     const imgEl = document.createElement('img');
-                    imgEl.src = objectUrl;
                     imgEl.alt = data.title || 'Pinterest Image';
                     imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
                     imgEl.onload = () => URL.revokeObjectURL(objectUrl);
+                    imgEl.src = objectUrl;
                     placeholder.replaceWith(imgEl);
                 })
                 .catch(() => {
