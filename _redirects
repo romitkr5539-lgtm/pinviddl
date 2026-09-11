@@ -1,0 +1,26 @@
+# Clean URL redirects — strips .html extension from all pages
+# Netlify / Cloudflare Pages format
+
+/pinterest-image-downloader   /pinterest-image-downloader.html   200
+/pinterest-gif-downloader     /pinterest-gif-downloader.html     200
+/about                        /about.html                        200
+/contact                      /contact.html                      200
+/privacy                      /privacy.html                      200
+/disclaimer                   /disclaimer.html                   200
+/blog                         /blog.html                         200
+/404                          /404.html                          200
+
+# Blog posts
+/blog/how-to-download-pinterest-videos   /blog/how-to-download-pinterest-videos.html   200
+
+# Redirect old .html URLs to clean versions (301 permanent)
+/pinterest-image-downloader.html   /pinterest-image-downloader   301
+/pinterest-gif-downloader.html     /pinterest-gif-downloader     301
+/about.html                        /about                        301
+/contact.html                      /contact                      301
+/privacy.html                      /privacy                      301
+/disclaimer.html                   /disclaimer                   301
+/blog.html                         /blog                         301
+
+# 404 fallback
+/*   /404.html   404

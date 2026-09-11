@@ -359,11 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Render Pinterest Media Results
-    function showPreviewError(container) {
-        const el = createPreviewError();
-        container.appendChild(el);
-    }
-
     function createPreviewError() {
         const el = document.createElement('div');
         el.style.cssText = [
@@ -402,6 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .substring(0, 30);
 
         // Preview Element Creation
+        // NEVER use i.pinimg.com directly — it blocks cross-origin requests.
+        // Always route through the Worker proxy which adds the correct headers.
+        const proxyPreviewUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
+
         if (primaryMedia.type === 'video') {
             const videoEl = document.createElement('video');
             videoEl.controls = true;
@@ -410,74 +409,39 @@ document.addEventListener('DOMContentLoaded', () => {
             videoEl.playsInline = true;
             videoEl.preload = 'metadata';
             if (data.thumbnail) videoEl.poster = data.thumbnail;
+            videoEl.src = proxyPreviewUrl;
+            videoEl.onerror = () => {
+                videoEl.remove();
+                mediaPreview.appendChild(createPreviewError());
+            };
             mediaPreview.appendChild(videoEl);
 
-            // Try loading video: direct URL first, then proxy, then show error
-            async function loadVideo() {
-                const attempts = [
-                    primaryMedia.url,
-                    getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint)
-                ];
-                for (const src of attempts) {
-                    try {
-                        const res = await fetch(src, { method: 'HEAD' });
-                        const ct = res.headers.get('content-type') || '';
-                        if (res.ok && (ct.includes('video') || ct.includes('octet-stream') || ct.includes('mp4'))) {
-                            videoEl.src = src;
-                            return;
-                        }
-                    } catch (_) { /* try next */ }
-                    // HEAD might be blocked — just try setting src and see
-                    videoEl.src = src;
-                    const loaded = await new Promise(resolve => {
-                        videoEl.onloadedmetadata = () => resolve(true);
-                        videoEl.onerror = () => resolve(false);
-                        setTimeout(() => resolve(false), 8000);
-                    });
-                    videoEl.onloadedmetadata = null;
-                    videoEl.onerror = null;
-                    if (loaded) return;
-                }
-                // All attempts failed — show message
-                videoEl.remove();
-                showPreviewError(mediaPreview);
-            }
-            loadVideo();
-
         } else {
-            // Use fetch+blob to validate the image before showing it
-            // This prevents the browser ever rendering a broken/fake image
             const placeholder = document.createElement('div');
-            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:120px;color:#555;font-size:0.85rem;';
+            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:160px;color:#555;font-size:0.85rem;';
             placeholder.textContent = 'Loading preview…';
             mediaPreview.appendChild(placeholder);
 
-            async function loadImage() {
-                const attempts = [
-                    primaryMedia.url,
-                    getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint)
-                ];
-                for (const src of attempts) {
-                    try {
-                        const res = await fetch(src);
-                        const ct = res.headers.get('content-type') || '';
-                        if (res.ok && ct.startsWith('image/')) {
-                            const blob = await res.blob();
-                            const objectUrl = URL.createObjectURL(blob);
-                            const imgEl = document.createElement('img');
-                            imgEl.src = objectUrl;
-                            imgEl.alt = data.title || 'Pinterest Image';
-                            imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
-                            imgEl.onload = () => URL.revokeObjectURL(objectUrl);
-                            placeholder.replaceWith(imgEl);
-                            return;
-                        }
-                    } catch (_) { /* try next */ }
-                }
-                // All attempts failed
-                placeholder.replaceWith(createPreviewError());
-            }
-            loadImage();
+            // Fetch through proxy and check content-type before rendering
+            // This prevents broken/fake images from ever appearing
+            fetch(proxyPreviewUrl)
+                .then(res => {
+                    const ct = res.headers.get('content-type') || '';
+                    if (!res.ok || !ct.startsWith('image/')) throw new Error('not_image');
+                    return res.blob();
+                })
+                .then(blob => {
+                    const objectUrl = URL.createObjectURL(blob);
+                    const imgEl = document.createElement('img');
+                    imgEl.alt = data.title || 'Pinterest Image';
+                    imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
+                    imgEl.onload = () => URL.revokeObjectURL(objectUrl);
+                    imgEl.src = objectUrl;
+                    placeholder.replaceWith(imgEl);
+                })
+                .catch(() => {
+                    placeholder.replaceWith(createPreviewError());
+                });
         }
 
         // A video preview should only offer video downloads; image previews keep image options.
