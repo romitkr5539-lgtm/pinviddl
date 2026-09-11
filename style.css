@@ -132,7 +132,7 @@ header {
 
 .hero h1 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 5vw, 3rem);
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 18px;
@@ -890,7 +890,7 @@ header {
     color: #fff !important;
     background: none !important;
     -webkit-text-fill-color: initial !important;
-    font-size: clamp(2.35rem, 5vw, 4rem);
+    font-size: clamp(1.6rem, 5vw, 4rem);
     letter-spacing: -0.06em;
     text-align: center;
 }
@@ -1089,6 +1089,13 @@ footer .footer-column a:hover {
         text-align: center;
     }
 
+    .hero h1 {
+        font-size: 1.9rem;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        word-break: break-word;
+    }
+
     .brand-logo {
         max-width: 145px;
         height: 32px;
@@ -1183,7 +1190,7 @@ footer .footer-column a:hover {
     margin: 14px 0 18px;
     color: #fff;
     font-family: var(--font-heading);
-    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-size: clamp(1.6rem, 5vw, 4.5rem);
     line-height: 0.98;
     letter-spacing: -0.06em;
 }
@@ -1314,6 +1321,13 @@ footer .footer-column a:hover {
 @media (max-width: 600px) {
     .blog-hero {
         padding: 46px 0 30px;
+    }
+
+    .blog-hero h1 {
+        font-size: 1.9rem;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        word-break: break-word;
     }
 
     .blog-header-links {
@@ -1594,3 +1608,15 @@ footer .footer-column a:hover {
     }
 }
 
+
+/* ── Mobile h1 overrides (all pages) ── */
+@media (max-width: 600px) {
+    .page-hero h1,
+    .about-hero h1,
+    .post-hero h1 {
+        font-size: 1.9rem !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1.15 !important;
+        word-break: break-word;
+    }
+}

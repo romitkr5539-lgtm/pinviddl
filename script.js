@@ -379,29 +379,52 @@ document.addEventListener('DOMContentLoaded', () => {
         // Preview Element Creation
         if (primaryMedia.type === 'video') {
             const videoEl = document.createElement('video');
-            videoEl.src = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
             videoEl.controls = true;
             videoEl.autoplay = true;
             videoEl.muted = true;
             videoEl.playsInline = true;
             videoEl.preload = 'metadata';
-            videoEl.poster = data.thumbnail || '';
             videoEl.referrerPolicy = 'no-referrer';
+            if (data.thumbnail) videoEl.poster = data.thumbnail;
+
+            // Try direct URL first — works in browser since it sends correct headers
+            videoEl.src = primaryMedia.url;
+
             videoEl.onerror = () => {
-                if (videoEl.src.includes('/api/proxy')) {
-                    videoEl.src = primaryMedia.url;
+                // Direct failed — try proxy
+                const proxyUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
+                if (videoEl.src !== proxyUrl) {
+                    videoEl.src = proxyUrl;
+                } else {
+                    // Both failed — show error message
+                    const errMsg = document.createElement('div');
+                    errMsg.style.cssText = 'padding:20px;color:#a4a4a4;font-size:0.9rem;text-align:center;';
+                    errMsg.textContent = 'Preview unavailable — use the download button below to save the file.';
+                    mediaPreview.replaceChild(errMsg, videoEl);
                 }
             };
             mediaPreview.appendChild(videoEl);
         } else {
             const imgEl = document.createElement('img');
-            imgEl.src = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
             imgEl.alt = data.title || 'Pinterest Image';
             imgEl.loading = 'lazy';
-            imgEl.referrerPolicy = 'no-referrer';
+            imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
+
+            // Try direct URL first
+            imgEl.src = primaryMedia.url;
+
             imgEl.onerror = () => {
-                if (imgEl.src.includes('/api/proxy')) {
-                    imgEl.src = primaryMedia.url;
+                // Direct failed — try proxy
+                const proxyUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
+                if (imgEl.src !== proxyUrl) {
+                    imgEl.referrerPolicy = 'no-referrer';
+                    imgEl.src = proxyUrl;
+                } else {
+                    // Both failed — remove broken image and show message
+                    const errMsg = document.createElement('div');
+                    errMsg.style.cssText = 'padding:20px;color:#a4a4a4;font-size:0.9rem;text-align:center;';
+                    errMsg.textContent = 'Preview unavailable — use the download button below to save the file.';
+                    if (imgEl.parentNode) imgEl.parentNode.replaceChild(errMsg, imgEl);
                 }
             };
             mediaPreview.appendChild(imgEl);
