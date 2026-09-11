@@ -359,6 +359,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Render Pinterest Media Results
+    function showPreviewError(container) {
+        const el = createPreviewError();
+        container.appendChild(el);
+    }
+
+    function createPreviewError() {
+        const el = document.createElement('div');
+        el.style.cssText = [
+            'display:flex', 'flex-direction:column', 'align-items:center',
+            'justify-content:center', 'gap:10px', 'padding:28px 20px',
+            'color:#666', 'font-size:0.88rem', 'text-align:center',
+            'border:1px dashed #2b2b2b', 'border-radius:14px'
+        ].join(';');
+        el.innerHTML = `
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#444"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <span>Preview unavailable — use the Download button below.</span>
+        `;
+        return el;
+    }
+
     function renderResults(data, mediaWorkerEndpoint) {
         // Clear old results
         mediaPreview.innerHTML = '';
@@ -384,50 +409,75 @@ document.addEventListener('DOMContentLoaded', () => {
             videoEl.muted = true;
             videoEl.playsInline = true;
             videoEl.preload = 'metadata';
-            videoEl.referrerPolicy = 'no-referrer';
             if (data.thumbnail) videoEl.poster = data.thumbnail;
-
-            // Try direct URL first — works in browser since it sends correct headers
-            videoEl.src = primaryMedia.url;
-
-            videoEl.onerror = () => {
-                // Direct failed — try proxy
-                const proxyUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
-                if (videoEl.src !== proxyUrl) {
-                    videoEl.src = proxyUrl;
-                } else {
-                    // Both failed — show error message
-                    const errMsg = document.createElement('div');
-                    errMsg.style.cssText = 'padding:20px;color:#a4a4a4;font-size:0.9rem;text-align:center;';
-                    errMsg.textContent = 'Preview unavailable — use the download button below to save the file.';
-                    mediaPreview.replaceChild(errMsg, videoEl);
-                }
-            };
             mediaPreview.appendChild(videoEl);
-        } else {
-            const imgEl = document.createElement('img');
-            imgEl.alt = data.title || 'Pinterest Image';
-            imgEl.loading = 'lazy';
-            imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
 
-            // Try direct URL first
-            imgEl.src = primaryMedia.url;
-
-            imgEl.onerror = () => {
-                // Direct failed — try proxy
-                const proxyUrl = getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint);
-                if (imgEl.src !== proxyUrl) {
-                    imgEl.referrerPolicy = 'no-referrer';
-                    imgEl.src = proxyUrl;
-                } else {
-                    // Both failed — remove broken image and show message
-                    const errMsg = document.createElement('div');
-                    errMsg.style.cssText = 'padding:20px;color:#a4a4a4;font-size:0.9rem;text-align:center;';
-                    errMsg.textContent = 'Preview unavailable — use the download button below to save the file.';
-                    if (imgEl.parentNode) imgEl.parentNode.replaceChild(errMsg, imgEl);
+            // Try loading video: direct URL first, then proxy, then show error
+            async function loadVideo() {
+                const attempts = [
+                    primaryMedia.url,
+                    getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint)
+                ];
+                for (const src of attempts) {
+                    try {
+                        const res = await fetch(src, { method: 'HEAD' });
+                        const ct = res.headers.get('content-type') || '';
+                        if (res.ok && (ct.includes('video') || ct.includes('octet-stream') || ct.includes('mp4'))) {
+                            videoEl.src = src;
+                            return;
+                        }
+                    } catch (_) { /* try next */ }
+                    // HEAD might be blocked — just try setting src and see
+                    videoEl.src = src;
+                    const loaded = await new Promise(resolve => {
+                        videoEl.onloadedmetadata = () => resolve(true);
+                        videoEl.onerror = () => resolve(false);
+                        setTimeout(() => resolve(false), 8000);
+                    });
+                    videoEl.onloadedmetadata = null;
+                    videoEl.onerror = null;
+                    if (loaded) return;
                 }
-            };
-            mediaPreview.appendChild(imgEl);
+                // All attempts failed — show message
+                videoEl.remove();
+                showPreviewError(mediaPreview);
+            }
+            loadVideo();
+
+        } else {
+            // Use fetch+blob to validate the image before showing it
+            // This prevents the browser ever rendering a broken/fake image
+            const placeholder = document.createElement('div');
+            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:120px;color:#555;font-size:0.85rem;';
+            placeholder.textContent = 'Loading preview…';
+            mediaPreview.appendChild(placeholder);
+
+            async function loadImage() {
+                const attempts = [
+                    primaryMedia.url,
+                    getWorkerProxyUrl(primaryMedia.url, 'preview', true, mediaWorkerEndpoint)
+                ];
+                for (const src of attempts) {
+                    try {
+                        const res = await fetch(src);
+                        const ct = res.headers.get('content-type') || '';
+                        if (res.ok && ct.startsWith('image/')) {
+                            const blob = await res.blob();
+                            const objectUrl = URL.createObjectURL(blob);
+                            const imgEl = document.createElement('img');
+                            imgEl.src = objectUrl;
+                            imgEl.alt = data.title || 'Pinterest Image';
+                            imgEl.style.cssText = 'max-width:100%;display:block;border-radius:12px;';
+                            imgEl.onload = () => URL.revokeObjectURL(objectUrl);
+                            placeholder.replaceWith(imgEl);
+                            return;
+                        }
+                    } catch (_) { /* try next */ }
+                }
+                // All attempts failed
+                placeholder.replaceWith(createPreviewError());
+            }
+            loadImage();
         }
 
         // A video preview should only offer video downloads; image previews keep image options.
