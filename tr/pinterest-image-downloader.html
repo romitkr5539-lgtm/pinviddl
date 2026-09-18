@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://pinviddl.com/pinviddl-favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://pinviddl.com/pinviddl-favicon.png" />
+    <title>Pinterest Resim İndirici – Pinterest Fotoğrafı İndir</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Herkese açık herhangi bir Pinterest resim Pin'ini Pinterest'in sağladığı formatta indirin. Pin bağlantısını yapıştırın, resmi önizleyin ve telefonunuza veya bilgisayarınıza kaydedin." />
+    <link rel="canonical" href="https://pinviddl.com/tr/pinterest-image-downloader" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinterest Resim İndirici – Pinterest Fotoğrafı İndir" />
+    <meta property="og:description" content="Herkese açık herhangi bir Pinterest resim Pin'ini Pinterest'in sağladığı formatta indirin. Pin bağlantısını yapıştırın, resmi önizleyin ve telefonunuza veya bilgisayarınıza kaydedin." />
+    <meta property="og:image" content="/pinviddl.png" />
+    <meta property="og:url" content="https://pinviddl.com/tr/pinterest-image-downloader" />
+    <meta property="og:site_name" content="PinViddl" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pinterest Resim İndirici – Pinterest Fotoğrafı İndir" />
+    <meta name="twitter:description" content="Herkese açık herhangi bir Pinterest resim Pin'ini Pinterest'in sağladığı formatta indirin. Pin bağlantısını yapıştırın, resmi önizleyin ve telefonunuza veya bilgisayarınıza kaydedin." />
+    <meta name="twitter:image" content="/pinviddl.png" />
+
+    <link rel="stylesheet" href="https://pinviddl.com/romitsy.css" />
+ <!-- hreflang -->
+    <link rel="alternate" hreflang="en"
+      href="https://pinviddl.com/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="es"
+      href="https://pinviddl.com/es/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="pt"
+      href="https://pinviddl.com/pt/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="fr"
+      href="https://pinviddl.com/fr/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="de"
+      href="https://pinviddl.com/de/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="id"
+      href="https://pinviddl.com/id/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="hi"
+      href="https://pinviddl.com/hi/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="tr"
+      href="https://pinviddl.com/tr/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="it"
+      href="https://pinviddl.com/it/pinterest-image-downloader">
+
+<link rel="alternate" hreflang="x-default"
+      href="https://pinviddl.com/pinterest-image-downloader">
+    <style>
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.1);
+            border: 1px solid rgba(230,0,35,0.25);
+            border-radius: 999px;
+            color: #ff3654;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 5px 14px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        .page-badge svg { stroke: #ff3654; }
+    </style>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Bir Pinterest resmini nasıl indiririm?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kaydetmek istediğiniz Pin'e gidin, URL'sini kopyalayın ve PinViddl'ın Pinterest Resim İndiricisine yapıştırın. Resim alındıktan sonra görüntüleyebilir ve cihazınıza kaydedebilirsiniz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pinterest resimlerini JPG yerine PNG olarak indirebilir misiniz?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PinViddl resimleri Pinterest'in sunduğu orijinal hallerinde kaydeder, bir dosya formatından diğerine dönüştürme yapmaz. Pinterest'te barındırılan birçok resim JPG formatındayken, infografik gibi grafik resimler genellikle PNG formatındadır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pinterest resimlerim neden küçük boyutta veya düşük kalitede indiriliyor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "İndirilen resim Pinterest'in herkese açık hale getirdiği sürümle aynıdır. Resim Pinterest'te yalnızca düşük çözünürlükte varsa, PinViddl aracılığıyla daha iyi bir sürüm mevcut olmayacaktır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "pin.it bağlantısı resim indirmek için çalışır mı?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Çoğu zaman evet. pin.it bağlantısı, tam Pin sayfasına yönlendiren kısaltılmış bir paylaşım bağlantısıdır, bu nedenle PinViddl'a yerleştirmek tam bir pinterest.com bağlantısı yerleştirmekle aynı şekilde çalışır."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Bir Pinterest panosundaki tüm resimleri tek seferde indirmek mümkün mü?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hayır. PinViddl aynı anda yalnızca bir Pin indirebilir. Bir Pinterest panosundan birden fazla resim istiyorsanız, her Pin'i açıp ayrı ayrı kaydetmeniz gerekir."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Bir Pinterest Pin'inden resim indirmemi ne engelliyor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Muhtemelen yanlış bağlantıyı kullanıyorsunuz — yalnızca Pin URL'leri geçerlidir (bağlantı /pin/ içermelidir), profil veya pano URL'leri değil. Ayrıca Pin'in silinmediğinden veya gizli yapılmadığından emin olun, çünkü bunlar dış erişimi engeller."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PinViddl Pinterest Resim İndirici",
+        "url": "https://pinviddl.com/tr/pinterest-image-downloader",
+        "description": "Pinterest resimlerini orijinal formatlarında indirmek için ücretsiz tarayıcı tabanlı bir araç. Giriş yok, uygulama yok, sadece Pin URL'sini yapıştırın.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "All",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@type": "Organization", "name": "PinViddl", "url": "https://pinviddl.com/" }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D28LBZ52GX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D28LBZ52GX');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/tr/" class="logo">
+                <img class="brand-logo" src="https://pinviddl.com/pinviddl.png" alt="PinViddl logosu" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Navigasyon menüsünü aç" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Ana navigasyon">
+                <a href="/tr/">Video</a>
+                <a href="/tr/pinterest-image-downloader">Resim</a>
+                <a href="/tr/pinterest-gif-downloader">GIF</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero font-sans">
+            <h1>Pinterest Resim İndirici</h1>
+            <p>Pin bağlantısını yapıştırarak Pinterest'ten resim indirin. Pinterest fotoğraflarını, resimlerini ve grafiklerini telefonunuza veya bilgisayarınıza kaydedin.</p>
+
+            <!-- Tool switcher -->
+            <div class="tool-tabs">
+                <a href="/tr/" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    Video
+                </a>
+                <a href="/tr/pinterest-image-downloader" class="tool-tab active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Resim
+                </a>
+                <a href="/tr/pinterest-gif-downloader" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
+                    GIF
+                </a>
+            </div>
+        </section>
+
+        <!-- ads -->
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 20px auto; overflow: hidden;">
+    <script>
+      atOptions = {
+        'key' : 'cbedd52c79c4615ebba332bbe7202497',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highrevenueformat.com/cbedd52c79c4615ebba332bbe7202497/invoke.js"></script>
+</div>
+
+        <!-- Downloader -->
+        <section class="glass-card">
+            <form id="downloader-form" class="downloader-form">
+                <div class="input-container">
+                  
+                    <input
+                        type="url"
+                        id="pinterest-url"
+                        name="pinterest-url"
+                        aria-label="Pinterest resim Pin URL'si"
+                        placeholder="Pinterest resim pin bağlantısını yapıştırın (örn. https://pin.it/abcde veya pinterest.com/pin/123...)"
+                        required
+                    />
+                    <div class="input-action-buttons">
+                        <button type="button" id="paste-btn" class="action-btn" aria-label="Panodan URL yapıştır">Yapıştır</button>
+                        <button type="button" id="clear-btn" class="action-btn" aria-label="URL girişini temizle">Temizle</button>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Resim İndir
+                </button>
+            </form>
+
+            <!-- Progress -->
+            <div id="spinner" class="spinner-container">
+                <div class="progress-header">
+                    <span class="loader-text">Resim kaynağı çıkarılıyor</span>
+                    <strong id="progress-percent">0%</strong>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="Medya yükleniyor" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="results-container" class="results-container" style="margin-top: 32px;">
+                <div class="preview-grid">
+                    <div id="media-preview" class="media-frame"></div>
+                    <div class="download-details">
+                        <div id="dl-options" class="dl-options"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="new-download-btn" class="new-download-btn">Başka bir resim indir</button>
+        </section>
+    </main>
+ <!-- ads -->
+       <div style="width:100%; display:flex; justify-content:center; align-items:center; margin:20px auto; overflow:hidden;">
+    <script>
+      atOptions = {
+        'key' : 'cde15667464f6c908d6e9678ad4e2252',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highrevenueformat.com/cde15667464f6c908d6e9678ad4e2252/invoke.js"></script>
+</div>
+    <!-- SEO Content -->
+    <section class="seo-content container">
+
+        <div class="seo-block">
+            <h2>Pinterest Resimlerini Tam Boyutta İndirin</h2>
+            <p>Pinterest resimleri orijinal boyutlarında kaydetmeyi biraz karmaşık hale getirir. Tarayıcınızda bir pine sağ tıklamayı denerseniz, gerçek resim dosyası yerine küçük resmini kaydedebilirsiniz. Ancak PinViddl'daki Pinterest Resim İndirici farklıdır — sadece pinin URL'sini girmeniz yeterlidir ve araç tam boyutlu resmi indirip cihazınıza kaydetmeniz için size getirir.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Sağ Tıkla Kaydet Neden İşe Yaramıyor</h2>
+            <p>Pinterest'te gördüğünüz resimler yalnızca hızlı yüklenmek üzere optimize edilmiş önizlemelerdir. Bu nedenle, bir resmi geleneksel şekilde kaydetmek, Pinterest'in yayınladığı gerçek resim yerine önizlemeyle sonuçlanabilir. Buna karşılık, PinViddl akıştaki resimleri değil, Pin'in gerçek sayfasını kullanır; bu nedenle elde ettiğiniz resim Pinterest'in yayınladığı gerçek dosyadır.</p>
+            <p>Ancak, PinViddl'ın resimde olandan daha fazla veri üretemeyeceğini anlamalısınız. Kullanıcının yüklediği resim başlangıçta çok küçükse, onu o haliyle indirebilirsiniz. PinViddl yalnızca erişilebilir olanı alır ve orijinal resmi hiçbir şekilde iyileştirmez veya büyütmez.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Hangi Pinterest Bağlantıları Gerçekten Çalışır</h2>
+            <p>Resim İndirici aracıyla çalışırken, kullanıcılar <code>pinterest.com/pin/1234567890123456789</code> gibi gerçek Pin URL'lerini bulmak isteyecektir. Çünkü normal pin.it URL'leri genellikle o belirli Pin'e yönlendirir.</p>
+            <p>Profillere, panolara veya Pinterest aramalarına bağlantılar kullanmak iyi sonuç vermez çünkü bu tür URL'ler belirli bir resme işaret etmez — bunlar genellikle birden fazla resim içeren genel bağlantılardır. Bir pano bağlantısının yanlışlıkla kopyalanması durumunda, kullanıcı ihtiyaç duyduğu tek Pin'e ulaşmak için panoda gezinmelidir.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Dosyayı Mobil Cihaza veya Masaüstüne Kaydetme</h2>
+            <p>İndir düğmesine dokunduğunuzda, gerçekleştirilen işlemler kullandığınız web tarayıcısına bağlıdır. Örneğin, bir iPhone ve Safari kullanıyorsanız, genellikle resmi yeni bir sayfa sekmesinde açar ve resmi Fotoğraflar uygulamasına eklemek için önce üzerine basılı tutmanız ve ardından Resmi Kaydet'i seçmeniz gerekir. Chrome kullanan Android cihazlarda, dosya genellikle doğrudan İndirilenler klasörüne gönderilir. Ancak, indirme sırasında resmi ayrı bir Galeri klasörüne gönderebilen bazı mobil cihazlar vardır.</p>
+            <p>Kişisel bilgisayara gelince — Chrome, Edge, Firefox veya Safari — resim ilgili tarayıcının belirlenmiş İndirilenler klasörüne kaydedilir ve buradan taşınıp erişilebilir.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Pinterest Resim Formatları</h2>
+            <p>Pinterest resim paylaşırken farklı formatlar kullanır. Pinterest'te kullanılan resimlerin çoğu fotoğraflardır (.jpeg veya .jpg). Grafikler ve infografikler genellikle PNG formatındadır, çünkü PNG düz renkler veya metinle JPEG'den daha iyi çalışır, JPEG ise rengi bozabilir. Bazen Pinterest, çoğu modern tarayıcının desteklediği ancak eski tarayıcıların kullanmakta zorlanabileceği WebP adlı bir resim formatı kullanır.</p>
+            <p>PinViddl, Pinterest'in sunduğu aynı resim formatlarını kullanır. Belirli bir Pin için Pinterest bir resim formatı sunuyorsa, PinViddl tam olarak o formatı indirecektir. İndirilen resim yalnızca orijinal Pinterest Pin formatını yansıtacaktır. Aynı ilkeler boyutlar için de geçerlidir — resimler indirildiğinde kırpılmaz veya yeniden boyutlandırılmaz.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>Bir Resim İndirilemediğinde</h2>
+            <p>Bir resmin indirilmesini engelleyebilecek birkaç neden vardır ve iyi haber şu ki çoğu çözülebilir:</p>
+            <ul class="seo-list">
+                <li><strong>Bir resim Pin'ine bakmıyor olabilirsiniz.</strong> Bazı Pinler akışta statik bir resim gibi görünür, ancak kapak resmi bir video karesi olan video Pinleri olabilirler. Bu durumda, Pin'e dokunarak nasıl davrandığını kontrol edin — Pin oynatılıyorsa, bunun yerine <a href="/tr/" style="color:#e60023;text-decoration:none;">Pinterest Video İndiriciyi</a> kullanmanız gerekir.</li>
+                <li><strong>Bu çok resimli bir Idea Pin'dir.</strong> Pinterest'in gerçekte birkaç resimden oluşan çok sayfalı Pinleri vardır. Pin'in nasıl ayarlandığına bağlı olarak, yalnızca kapak resmini alabilirsiniz — her sayfayı değil.</li>
+                <li><strong>URL bir Pin'in URL'si değil.</strong> Yanlış bir URL yapıştırıldı, örneğin profil, pano veya arama URL'si yerine gerçek Pin'in URL'si.</li>
+                <li><strong>Pin gizli, kısıtlı veya silinmiş.</strong> Hesap veya panonun herkese açık görünürlüğü yoksa, Pin bulunamaz.</li>
+                <li><strong>Kopyalama sırasında URL bozuldu veya değişti.</strong> Bazen mobil cihazınızdan kopyaladığınızda, URL'nin kısaltılmasına veya bağlantının değiştirilmesine neden olabilir. URL'yi doğrudan adres çubuğundan kopyalayın.</li>
+                <li><strong>Pinterest bazı değişiklikler yaptı.</strong> Pinterest zaman zaman Pin sayfalarının biçimlendirmesini değiştirir, bu da çevrimiçi indiricileri kullanmada engel oluşturabilir. Belirli bir Pin daha önce çalışıyordu ancak şu anda çalışmıyorsa, birkaç dakika sonra tekrar deneyin.</li>
+            </ul>
+        </div>
+
+        <div class="seo-block">
+            <h2>Video Pin veya Animasyon mu Arıyorsunuz?</h2>
+            <p>Pinterest'teki tüm içerik geleneksel anlamda resimlerden oluşmaz. Görüntülediğinizde oynatılan bir Pin görürseniz, muhtemelen bir video veya GIF animasyonudur. Video için PinViddl <a href="/tr/" style="color:#e60023;text-decoration:none;">Pinterest video indirici</a> olarak kullanılabilir. İstediğiniz kısa döngüsel bir animasyonsa, bunun yerine <a href="/tr/pinterest-gif-downloader" style="color:#e60023;text-decoration:none;">Pinterest GIF indiriciyi</a> kullanabilirsiniz.</p>
+        </div>
+
+        <div class="seo-block">
+            <h2>İndirilen Resimleri Sorumlu Bir Şekilde Kullanma</h2>
+            <p>Pinterest'teki resimler, Pin üzerinde görünür bir filigran veya kredi satırı olmasa bile, onları oluşturan veya yayınlayan kişiye aittir. PinViddl ile bir resmi indirmek, ona kimin sahip olduğunu değiştirmez veya size onu yayınlama, satma veya başka bir şekilde yeniden kullanma hakkı vermez. İndirilen bir resmi kişisel referansın ötesinde bir şey için kullanmak istiyorsanız — bir blog yazısı, ürün listesi, sosyal medya, baskı — önce orijinal içerik üreticisini bulun ve izin alın.</p>
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+            <div class="faq-container">
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Bir Pinterest resmini nasıl indiririm?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">Kaydetmek istediğiniz Pin'e gidin, URL'sini kopyalayın ve PinViddl'ın Pinterest Resim İndiricisine yapıştırın. Resim alındıktan sonra görüntüleyebilir ve cihazınıza kaydedebilirsiniz.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Pinterest resimlerini JPG yerine PNG olarak indirebilir misiniz?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">PinViddl resimleri Pinterest'in sunduğu orijinal hallerinde kaydeder, bir dosya formatından diğerine dönüştürme yapmaz. Pinterest'te barındırılan birçok resim JPG formatındayken, infografik gibi grafik resimler genellikle PNG formatındadır.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Pinterest resimlerim neden küçük boyutta veya düşük kalitede indiriliyor?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">İndirilen resim Pinterest'in herkese açık hale getirdiği sürümle aynıdır. Resim Pinterest'te yalnızca düşük çözünürlükte varsa, PinViddl aracılığıyla daha iyi bir sürüm mevcut olmayacaktır.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>pin.it bağlantısı resim indirmek için çalışır mı?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">Çoğu zaman evet. pin.it bağlantısı, tam Pin sayfasına yönlendiren kısaltılmış bir paylaşım bağlantısıdır, bu nedenle PinViddl'a yerleştirmek tam bir pinterest.com bağlantısı yerleştirmekle aynı şekilde çalışır.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Bir Pinterest panosundaki tüm resimleri tek seferde indirmek mümkün mü?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">Hayır. PinViddl aynı anda yalnızca bir Pin indirebilir. Bir Pinterest panosundan birden fazla resim kaydetmek istiyorsanız, her Pin'i açıp ayrı ayrı kaydetmeniz gerekir.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Bir Pinterest Pin'inden resim indirmemi ne engelliyor?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">Muhtemelen yanlış bağlantıyı kullanıyorsunuz — yalnızca Pin URL'leri geçerlidir (bağlantı <code>/pin/</code> içermelidir), profil veya pano URL'leri değil. Ayrıca Pin'in silinmediğinden veya gizli yapılmadığından emin olun, çünkü bunlar dış erişimi engeller.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Diğer Araçlar</h3>
+                    <a href="https://threadsgrab.com/threads-image-downloader/">Threads Resim İndirici</a>
+                    <a href="https://fbviddl.com/facebook-image-downloader/">Facebook Resim İndirici</a>
+                    <a href="https://reditgrab.com/reddit-image-downloader/">Reddit Resim İndirici</a>
+                    <a href="https://threadsgrab.com/x/image-downloader/">Twitter Resim İndirici</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Yasal</h3>
+                    <a href="/privacy">Gizlilik Politikası</a>
+                    <a href="/disclaimer">Yasal Uyarı</a>
+                    <a href="/disclaimer">Telif Hakkı Bildirimi</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Şirket</h3>
+                    <a href="/about">PinViddl Hakkında</a>
+                    <a href="/contact">İletişim</a>
+                    <a href="/tr/">Ana Sayfaya Dön</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. Bu uygulama Pinterest, Inc. ile bağlantılı, onaylanmış veya sponsorlu değildir. Tüm ticari markalar ilgili sahiplerine aittir.</p>
+        </div>
+    </footer>
+
+    <script src="https://pinviddl.com/romitspt.js"></script>
+</body>
+</html>
