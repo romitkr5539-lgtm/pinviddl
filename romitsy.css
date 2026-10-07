@@ -23,6 +23,37 @@
     box-sizing: border-box;
 }
 
+a,
+a:link,
+a:visited,
+a:active,
+a:focus,
+a:hover,
+a:any-link {
+    color: #ff3654 !important;
+    text-decoration-color: #ff3654 !important;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ff1744 !important;
+}
+
+.seo-content a,
+.seo-content a:link,
+.seo-content a:visited,
+.seo-content a:active,
+.seo-content a:focus,
+.seo-content a:hover,
+.faq-content a,
+.faq-content a:link,
+.faq-content a:visited,
+.faq-content a:active,
+.faq-content a:focus,
+.faq-content a:hover {
+    color: #ff3654 !important;
+}
+
 body {
     background-color: var(--bg-primary);
     background-image: 
@@ -428,23 +459,43 @@ header {
 }
 
 .btn-action {
-    background: var(--accent-purple);
+    background: #e60023 !important;
     border: none;
-    border-radius: 8px;
-    color: #fff;
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    border-radius: 10px;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
+    justify-content: center;
+    gap: 8px;
+    min-width: 130px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 8px 22px rgba(230, 0, 35, 0.22) !important;
+}
+
+.btn-action svg,
+.btn-action .feather,
+.btn-action:hover svg,
+.btn-action:hover .feather {
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
 }
 
 .btn-action:hover {
-    background: #7c3aed;
+    background: #ff1744 !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
     transform: translateY(-1px);
 }
 
@@ -791,9 +842,9 @@ footer {
     --bg-secondary: #141414;
     --text-primary: #f7f7f7;
     --text-muted: #a4a4a4;
-    --accent-purple: #e60023;
-    --accent-fuchsia: #e60023;
-    --accent-rose: #ff3654;
+    --accent-purple: #8b5cf6;
+    --accent-fuchsia: #d946ef;
+    --accent-rose: #f43f5e;
     --glass-border: #2b2b2b;
     --card-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
@@ -1006,6 +1057,7 @@ header {
     border-radius: 10px !important;
     background: #e60023 !important;
     color: #fff !important;
+    box-shadow: 0 8px 22px rgba(230, 0, 35, 0.22) !important;
 }
 
 .btn-action:hover {
@@ -1135,7 +1187,12 @@ footer .footer-column a:hover {
     margin: 28px 0 0;
 }
 
-.tool-tab {
+.tool-tab,
+.tool-tab:link,
+.tool-tab:visited,
+.tool-tab:active,
+.tool-tab:focus,
+.tool-tab:hover {
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -1146,7 +1203,7 @@ footer .footer-column a:hover {
     text-decoration: none;
     border: 1px solid #3b3b3b;
     background: #1b1b1b;
-    color: #a4a4a4;
+    color: #a4a4a4 !important;
     transition: all 0.2s ease;
 }
 
@@ -1157,13 +1214,13 @@ footer .footer-column a:hover {
 
 .tool-tab:hover {
     border-color: #e60023;
-    color: #fff;
+    color: #fff !important;
 }
 
 .tool-tab.active {
     background: #e60023;
     border-color: #e60023;
-    color: #fff;
+    color: #fff !important;
 }
 
 /* Blog page */
@@ -1691,4 +1748,24 @@ footer .footer-column a:hover {
             color: rgba(255,255,255,0.8);
             margin: 0;
         }
+    
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230,0,35,0.1);
+            border: 1px solid rgba(230,0,35,0.25);
+            border-radius: 999px;
+            color: #ff3654;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 5px 14px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        .page-badge svg { stroke: #ff3654; }
+
+
     

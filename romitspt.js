@@ -188,6 +188,13 @@ document.addEventListener('DOMContentLoaded', () => {
         urlInput.focus();
     });
 
+    function getDownloadButtonLabel(type) {
+        if (type === 'video') return 'Download Video';
+        if (type === 'gif') return 'Download GIF';
+        if (type === 'image') return 'Download Image';
+        return 'Download File';
+    }
+
     // 3. Form Submit / Media Extraction Processor
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -488,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
             safeDownloadLink.download = `${sanitizedTitle}.${item.type === 'video' ? 'mp4' : item.type === 'gif' ? 'gif' : 'jpg'}`;
             safeDownloadLink.innerHTML = `
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Download
+                ${getDownloadButtonLabel(item.type)}
             `;
 
             safeDownloadLink.addEventListener('click', () => {

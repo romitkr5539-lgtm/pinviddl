@@ -8,239 +8,6 @@
     <meta name="description" content="Get in touch with the PinViddl team. Report a bug, ask a question, or share feedback about our free Pinterest downloader." />
     <link rel="canonical" href="https://pinviddl.com/contact" />
     <link rel="stylesheet" href="/style.css" />
-    <style>
-        .page-hero {
-            padding: 60px 0 36px;
-            text-align: center;
-        }
-        .page-hero h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 5vw, 3rem);
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.04em;
-            margin-bottom: 12px;
-        }
-        .page-hero h1::after {
-            display: block;
-            width: 42px;
-            height: 5px;
-            margin: 18px auto 0;
-            border-radius: 4px;
-            background: #e60023;
-            content: "";
-        }
-        .page-hero p {
-            color: #a4a4a4;
-            font-size: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 28px;
-            margin-bottom: 60px;
-            align-items: start;
-        }
-        .contact-form-card {
-            background: #141414;
-            border: 1px solid #2b2b2b;
-            border-radius: 24px;
-            padding: 40px 44px;
-            box-shadow: 0 18px 45px rgba(0,0,0,0.45);
-        }
-        .contact-form-card h2 {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 24px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #d1d1d1;
-            margin-bottom: 7px;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            background: #0c0c0c;
-            border: 1px solid #3c3c3c;
-            border-radius: 12px;
-            color: #fff;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            padding: 13px 16px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            outline: none;
-            appearance: none;
-        }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #555;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #e60023;
-            box-shadow: 0 0 0 3px rgba(230,0,35,0.14);
-        }
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-        .form-group select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            padding-right: 38px;
-            cursor: pointer;
-        }
-        .form-group select option {
-            background: #1a1a1a;
-            color: #fff;
-        }
-        .submit-contact-btn {
-            width: 100%;
-            background: #e60023;
-            border: none;
-            border-radius: 14px;
-            color: #fff;
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 700;
-            padding: 15px;
-            cursor: pointer;
-            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 8px 22px rgba(230,0,35,0.24);
-            margin-top: 6px;
-        }
-        .submit-contact-btn:hover {
-            background: #ff1744;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(230,0,35,0.34);
-        }
-        .success-msg {
-            display: none;
-            background: rgba(34,197,94,0.08);
-            border: 1px solid rgba(34,197,94,0.25);
-            border-radius: 12px;
-            color: #4ade80;
-            font-size: 0.95rem;
-            padding: 14px 18px;
-            margin-top: 18px;
-            text-align: center;
-        }
-        .flash-message {
-            position: fixed;
-            top: 92px;
-            right: 24px;
-            z-index: 100;
-            display: none;
-            max-width: min(380px, calc(100vw - 48px));
-            padding: 15px 18px;
-            border: 1px solid rgba(74, 222, 128, 0.45);
-            border-radius: 14px;
-            background: #181818;
-            color: #4ade80;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.55);
-            font-size: 0.9rem;
-            font-weight: 600;
-            animation: flashIn 0.35s ease-out both;
-        }
-        .flash-message.visible {
-            display: block;
-        }
-        @keyframes flashIn {
-            from { opacity: 0; transform: translateY(-12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Sidebar info cards */
-        .contact-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-        .info-card {
-            background: #141414;
-            border: 1px solid #2b2b2b;
-            border-radius: 18px;
-            padding: 22px;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.3);
-        }
-        .info-card-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(230,0,35,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 14px;
-        }
-        .info-card-icon svg {
-            stroke: #e60023;
-            width: 20px;
-            height: 20px;
-        }
-        .info-card h3 {
-            font-family: var(--font-heading);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-        .info-card p {
-            color: #a4a4a4;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .info-card a {
-            color: #e60023;
-            text-decoration: none;
-        }
-        .info-card a:hover {
-            text-decoration: underline;
-        }
-        .response-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(230,0,35,0.08);
-            border: 1px solid rgba(230,0,35,0.18);
-            border-radius: 999px;
-            color: #ff3654;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            margin-top: 10px;
-        }
-        .badge-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #e60023;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-        @media (max-width: 768px) {
-            .contact-layout { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .contact-form-card { padding: 24px 20px; }
-        }
-    </style>
 </head>
 <body>
     <div id="flash-message" class="flash-message" role="status" aria-live="polite">
@@ -257,8 +24,8 @@
             </button>
             <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
                 <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -353,22 +120,17 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <div class="footer-column">
-                    <h3>Other Tools</h3>
-                    <a href="https://threadsgrab.com/">Threads Video Downloader</a>
-                    <a href="https://fbviddl.com/">Facebook Video Downloader</a>
-                    <a href="https://reditgrab.com/">Reddit Video Downloader</a>
-                </div>
+               
                 <div class="footer-column">
                     <h3>Legal</h3>
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/disclaimer.html">Disclaimer</a>
-                    <a href="/disclaimer.html">Copyright Notice</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                    <a href="/disclaimer">Copyright Notice</a>
                 </div>
                 <div class="footer-column">
                     <h3>Company</h3>
-                    <a href="/about.html">About PinViddl</a>
-                    <a href="/contact.html">Contact</a>
+                    <a href="/about">About PinViddl</a>
+                    <a href="/contact">Contact</a>
                     <a href="/">Back to Home</a>
                 </div>
             </div>
