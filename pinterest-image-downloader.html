@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <title>Pinterest Image Downloader – Download Pinterest Photo Online</title>
+    <title>Pinterest Image Downloader - Download Pin Photos  </title>
 
     <!-- Primary SEO Meta Tags -->
-    <meta name="description" content="Download any public Pinterest image Pin in the format Pinterest provides it. Paste the Pin link, preview the image, and save it to your phone or computer." />
+    <meta name="description" content="PinViddl's Pinterest image downloader works with public Pins. Paste a link, preview available images, and save one in your browser. No login or app needed." />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="PinViddl" />
     <meta name="theme-color" content="#e60023" />
@@ -17,21 +17,9 @@
     <link rel="canonical" href="https://pinviddl.com/pinterest-image-downloader" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Pinterest Image Downloader – Download Pinterest Photo" />
-    <meta property="og:description" content="Download any public Pinterest image Pin in the format Pinterest provides it. Paste the Pin link, preview the image, and save it to your phone or computer." />
-    <meta property="og:image" content="https://pinviddl.com/pinviddl.png" />
-    <meta property="og:image:alt" content="Pinterest Image Downloader by PinViddl" />
-    <meta property="og:url" content="https://pinviddl.com/pinterest-image-downloader" />
-    <meta property="og:site_name" content="PinViddl" />
-
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@PinViddl" />
-    <meta name="twitter:title" content="Pinterest Image Downloader – Download Pinterest Photo" />
-    <meta name="twitter:description" content="Download any public Pinterest image Pin in the format Pinterest provides it. Paste the Pin link, preview the image, and save it to your phone or computer." />
-    <meta name="twitter:image" content="https://pinviddl.com/pinviddl.png" />
     <meta name="twitter:image:alt" content="Pinterest Image Downloader by PinViddl" />
 
     <link rel="stylesheet" href="/romitsy.css" />
@@ -68,54 +56,74 @@
 
 
     <!-- FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Can I download images from private Pins, secret boards or Pins that need a login?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. PinViddl only reads public Pin pages and doesn't log in to Pinterest. For your own private content, use Pinterest's download option or the original file you uploaded."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I download a whole board, or every image in a multi-image Pin?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not in one go. PinViddl works on one Pin link at a time, and board links are rejected. If a Pin holds several images, the result may list more than one row (\"Option #1\", \"Option #2\") but only the first image is previewed, so check each file after you save it."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I get a bigger or sharper version than the one I downloaded?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not from PinViddl, which doesn't upscale. Tools that enlarge images exist, but they add guessed detail instead of recovering the original. A higher-resolution source from the creator is the better route."
-                }
+    <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which Pinterest links does the image downloader accept?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use a link to one public Pin. A standard Pinterest Pin URL or a pin.it short link that opens the Pin can work. Board, profile, search, and home-feed links are not supported."
             }
-        ]
-    }
-    </script>
+        },
+        {
+            "@type": "Question",
+            "name": "Can I download images from private Pins or secret boards?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. PinViddl only checks public Pin pages and does not sign in to Pinterest. For your own private Pins, use Pinterest’s own download option or the original file you uploaded."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I download a whole board or every image in a multi-image Pin?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The tool processes one Pin link at a time, and board links are not supported. A Pin may return several image options, but the preview shows only the first; check each option before saving."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What image formats can I save?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The format depends on what Pinterest provides for the Pin. Results may be JPG, PNG, or WebP. PinViddl downloads the available file and does not convert it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can PinViddl make an image larger or sharper?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. PinViddl does not upscale or enhance images. For a larger source, check the creator’s website or ask the rights holder."
+            }
+        }
+    ]
+}</script>
 
     <!-- WebApplication Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "PinViddl Pinterest Image Downloader",
-        "url": "https://pinviddl.com/pinterest-image-downloader",
-        "description": "A free browser-based tool to download Pinterest images in their original format. No login, no app, just paste the Pin URL.",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "All",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "publisher": { "@type": "Organization", "name": "PinViddl", "url": "https://pinviddl.com/" }
+    <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pinterest Image Downloader | PinViddl",
+    "url": "https://pinviddl.com/pinterest-image-downloader",
+    "description": "Browser-based tool for finding image files available from a public Pinterest Pin. Preview available options and download one in the format Pinterest provides. No Pinterest login or app required.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "isAccessibleForFree": true,
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "PinViddl",
+        "url": "https://pinviddl.com/"
     }
-    </script>
+}</script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D28LBZ52GX"></script>
@@ -125,6 +133,18 @@
       gtag('js', new Date());
       gtag('config', 'G-D28LBZ52GX');
     </script>
+    <meta property="og:site_name" content="Pinterest Downloader" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinterest Image Downloader | PinViddl" />
+    <meta property="og:description" content="PinViddl's Pinterest image downloader works with public Pins. Paste a link, preview available images, and save one in your browser. No login or app needed." />
+    <meta property="og:url" content="https://pinviddl.com/pinterest-image-downloader" />
+    <meta property="og:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta property="og:image:alt" content="PinViddl logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pinterest Image Downloader | PinViddl" />
+    <meta name="twitter:description" content="PinViddl's Pinterest image downloader works with public Pins. Paste a link, preview available images, and save one in your browser. No login or app needed." />
+    <meta name="twitter:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta name="twitter:url" content="https://pinviddl.com/pinterest-image-downloader" />
 </head>
 <body>
     <header>
@@ -148,11 +168,11 @@
         <!-- Hero -->
         <section class="hero font-sans">
             <h1>Pinterest Image Downloader</h1>
-            <p>PinViddl's Pinterest image downloader turns a Pin link into a preview and a download. Paste the link of a public Pin, check the image, and save it to your phone or computer.</p>
+            <p>Use the Pinterest Image Downloader to save an image from a public Pin. Paste the Pin link, check which image files are available, then download the one you need. No Pinterest sign-in or app is required.</p>
 
             <!-- Tool switcher -->
             <div class="tool-tabs">
-                <a href="/" class="tool-tab">
+                <a href="/pinterest-video-downloader" class="tool-tab">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
                     Video
                 </a>
@@ -230,116 +250,125 @@
 </div>
     <!-- SEO Content -->
     <section class="seo-content container">
-
         <div class="seo-block">
-            <h2>How to download an image from Pinterest</h2>
+            <h2>How to use the Pinterest Image Downloader</h2>
             <ol class="seo-list">
-                <li><strong>Copy the Pin's link.</strong> On pinterest.com, open the Pin so it has a page of its own, then copy the address from your browser's address bar. In the Pinterest app, tap the Pin, tap Share, then Copy link.</li>
-                <li><strong>Paste it into the box above.</strong> The Paste button pulls the link from your clipboard, or you can paste it yourself. The link has to start with https://.</li>
-                <li><strong>Press Download Image.</strong> A progress bar runs for a couple of seconds while PinViddl looks up the Pin.</li>
-                <li><strong>Look at the preview.</strong> The image appears with at least one row beneath it. Each row has a Copy URL button, which copies the direct address of the image file, and a Download button.</li>
-                <li><strong>Press Download.</strong> Where the file lands depends on your device (see below). Use Download another image to start over with a new link.</li>
+                <li><strong>Copy the Pin link.</strong> Open the image Pin in Pinterest and choose Share → Copy link, or copy the Pin address from your browser.</li>
+                <li><strong>Paste and check the Pin.</strong> Add the link to the box above and select Download Image. PinViddl looks for image files available from that public Pin.</li>
+                <li><strong>Choose a result.</strong> Review the preview and the file options below it. A Pin with several available images may show more than one option; the preview displays the first one.</li>
+                <li><strong>Save the image.</strong> Select Download beside the file you want. Use Copy URL if you need that image file’s direct address.</li>
             </ol>
-            <p>Pinterest has its own option too. On some Pins, the ⋯ menu includes Download image, according to <a href="https://help.pinterest.com/en/article/download-an-image" target="_blank" rel="noopener noreferrer">Pinterest's help page</a>. When it's there, use it. PinViddl is for the times it isn't, or when all you have is a link someone sent you.</p>
+            <p>Pinterest also provides a built-in Download image option on some Pins. Check <a href="https://help.pinterest.com/en/article/download-an-image" target="_blank" rel="noopener noreferrer">Pinterest’s image-download instructions</a> first when that option is available. PinViddl is useful when you have a public Pin link and want to check which image files it exposes.</p>
         </div>
 
         <div class="seo-block">
-            <h2>Which Pinterest links work</h2>
+            <h2>Which Pinterest links are supported?</h2>
+            <p>Use the URL of one individual Pin. A standard Pinterest Pin address or a <code>pin.it</code> short link that opens a Pin can work. If a short link is not accepted, open it in your browser and copy the full Pin address.</p>
             <ul class="seo-list">
-                <li><strong>https://www.pinterest.com/pin/123456789/</strong> — Works. This is the standard Pin link.</li>
-                <li><strong>https://pin.it/AbCd123</strong> — Usually works. These are the short links from Pinterest's Share menu. If one fails, open it in your browser and copy the full address instead.</li>
-                <li><strong>https://in.pinterest.com/pin/…</strong> or <strong>https://pinterest.co.uk/pin/…</strong> — Works. Regional addresses on the tool's list are accepted.</li>
-                <li><strong>A board, profile or search link</strong> — Rejected. These point to many images, not one. Open the Pin you want and copy its link.</li>
-                <li><strong>A direct image address (i.pinimg.com/…)</strong> — Rejected. Use the link to the Pin's page.</li>
-                <li><strong>A link without https://</strong> — Add https:// at the start.</li>
+                <li><strong>Supported:</strong> public Pin links from Pinterest domains recognized by the tool.</li>
+                <li><strong>Not supported:</strong> board, profile, search, and home-feed links. They do not identify one Pin.</li>
+                <li><strong>Not supported:</strong> a direct image-file address such as one from <code>i.pinimg.com</code>. Start with the Pin page link instead.</li>
             </ul>
-            <p>A few less common regional Pinterest domains aren't recognized. If yours is rejected, swap the domain for <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">www.pinterest.com</a> and keep the /pin/ and the number after it, which usually works.</p>
+            <p>If a regional Pin address is rejected, open the Pin on Pinterest and copy its full address again. Do not paste a board or search URL in its place.</p>
         </div>
 
         <div class="seo-block">
-            <h2>Saving the image on iPhone, Android or a computer</h2>
-            <p>PinViddl hands the file to your browser, so what happens next depends on the browser.</p>
+            <h2>Where the downloaded image is saved</h2>
+            <p>Your browser decides whether to save the file or open it in a tab. If it opens, use your device’s save option:</p>
             <ul class="seo-list">
-                <li><strong>iPhone (Safari).</strong> The file may go to the Files app under Downloads, or open as a plain image. If it opens, touch and hold it and choose Add to Photos.</li>
-                <li><strong>Android (Chrome).</strong> Downloads normally land in the Downloads folder, and some gallery apps list them separately. If the image opens in a tab instead, touch and hold it and choose Download image.</li>
-                <li><strong>Computer.</strong> Chrome, Edge, Firefox and Safari normally save to your Downloads folder. If the image opens in a tab, right-click it and choose Save image as.</li>
+                <li><strong>iPhone or iPad:</strong> check Safari Downloads or the Downloads folder in Files. If the image opens by itself, touch and hold it to see available save options.</li>
+                <li><strong>Android:</strong> check your browser’s Downloads list or the Downloads folder. If the image opens in a tab, touch and hold it and choose Download image.</li>
+                <li><strong>Windows or Mac:</strong> check the browser’s download list or Downloads folder. If the image opened in a tab, right-click it and choose Save image as.</li>
             </ul>
         </div>
 
         <div class="seo-block">
-            <h2>What to expect from the image quality</h2>
-            <p>PinViddl looks up the image file attached to the Pin and passes it to you. It doesn't upscale, sharpen or enhance anything, so the result can't be better than what Pinterest has for that Pin.</p>
-            <p>That matters because the picture in a feed is often a reduced copy of the upload, and some uploads were small to begin with. If a download looks smaller than you hoped, check whether the Pin itself is low resolution.</p>
-            <p>To see what you actually got, look at the file's dimensions rather than trusting a label: Properties on Windows, Get Info on a Mac, or the Info panel in your phone's photo app. If you need something bigger, the creator's own website or portfolio is the better place to look.</p>
-            <p>The file type is whatever Pinterest serves for that Pin, most often JPG and sometimes PNG or WebP. PinViddl isn't a converter, so there's no option to change formats.</p>
+            <h2>Image quality and file types</h2>
+            <p>PinViddl retrieves the image files available for the Pin. The saved image cannot be clearer or larger than the source Pinterest provides; the tool does not upscale, sharpen, or enhance it.</p>
+            <p>The format depends on the file Pinterest serves. Results may be JPG, PNG, or WebP. PinViddl does not convert images to another format. If you need a higher-resolution source, check the creator’s own website or ask the rights holder.</p>
+            <p>To check the file you saved, view its dimensions in Properties on Windows, Get Info on Mac, or your phone’s photo or file details.</p>
         </div>
 
         <div class="seo-block">
-            <h2>If the download doesn't work</h2>
-            <p>The tool shows short messages when something goes wrong. Here is what each one usually means.</p>
+            <h2>Fix a Pinterest image download</h2>
+            <p>Start with the message on the page and check the link you submitted:</p>
             <ul class="seo-list">
-                <li><strong>"Please insert a valid Pinterest URL…"</strong> The link was rejected before anything was sent. Check that it starts with https://, contains /pin/ followed by a number (or is a pin.it link), and isn't a board, profile or search address.</li>
-                <li><strong>"Media extraction failed. Please make sure the Pin is public."</strong> PinViddl couldn't get the image from that Pin. Private, restricted and deleted Pins are the usual cause. To test, open the link in a private browsing window. If Pinterest asks you to log in or says the Pin isn't available, PinViddl can't fetch it either. If the Pin opens fine there, wait a few minutes and try again, since Pinterest changes its pages from time to time and that can briefly break any downloader.</li>
-                <li><strong>"No downloadable media found for this Pin."</strong> The Pin loaded but nothing downloadable came back. Try the full pinterest.com link instead of a short one, and try a different Pin to see whether the problem is that Pin.</li>
-                <li><strong>"Unable to read clipboard. Please paste manually."</strong> Your browser blocked the Paste button. Touch and hold in the box and choose Paste, or press Ctrl+V (Cmd+V on a Mac).</li>
-                <li><strong>"Preview unavailable — use the Download button below."</strong> The preview didn't load, but the Download button may still work.</li>
+                <li><strong>“Please insert a valid Pinterest URL…”</strong> Use a supported public Pin link that begins with <code>https://</code>. Board, profile, and search links are not accepted.</li>
+                <li><strong>“Media extraction failed. Please make sure the Pin is public.”</strong> The Pin may be private, restricted, or deleted. If it opens in a private browser window, wait a little and try again; Pinterest’s pages can change.</li>
+                <li><strong>“No downloadable media found for this Pin.”</strong> Check that the Pin contains an image and try copying its full URL from Pinterest.</li>
+                <li><strong>“Unable to read clipboard. Please paste manually.”</strong> Your browser may have blocked clipboard access. Paste into the field yourself, or press Ctrl+V on Windows and Cmd+V on Mac.</li>
+                <li><strong>“Preview unavailable — use the Download button below.”</strong> The preview can fail while a file is still available. Try the Download button if it appears.</li>
             </ul>
-            <p>If a public Pin keeps failing, send its link through the <a href="/contact">Contact page</a> so it can be checked.</p>
+            <p>If a public Pin keeps failing, send its link and the message you saw through the <a href="/contact">Contact page</a>.</p>
         </div>
 
         <div class="seo-block">
-            <h2>Video and animated Pins</h2>
-            <p>PinViddl's image, video and GIF pages use the same lookup, so a video or animated Pin pasted here may come back as a video or animation instead of a still image. For video Pins, the <a href="/">Pinterest video downloader</a> is the dedicated page, and the <a href="/pinterest-gif-downloader">Pinterest GIF downloader</a> covers looping animations.</p>
+            <h2>Choose the tool for your Pin</h2>
+            <p>This page is for still images. Use the dedicated tool for video or animated Pins:</p>
+            <p><a href="/">Pinterest Video Downloader</a> · <a href="/pinterest-gif-downloader">Pinterest GIF Downloader</a></p>
         </div>
 
         <div class="seo-block">
-            <h2>Before you reuse a downloaded image</h2>
-            <p>A Pin is someone's work. Saving a copy doesn't transfer ownership or give you permission to publish, sell, print or repost it, even when there's no watermark or credit on the Pin. Keeping an image for personal reference is different from putting it in a blog post, product listing, ad or social post, which usually calls for the creator's permission. The rules vary by country and by image, so if you're unsure, ask the creator or rights holder. PinViddl's <a href="/disclaimer">Disclaimer</a> explains the intended use. None of this is legal advice.</p>
+            <h2>Save and reuse images responsibly</h2>
+            <p>Downloading an image does not transfer its copyright or give permission to repost, print, sell, or use it in an ad. Save content you own or have permission to use. If you plan to share or use an image beyond personal reference, check with the creator or rights holder and follow the rules that apply to you. See the <a href="/disclaimer">Disclaimer</a> for PinViddl’s intended use.</p>
         </div>
 
         <div class="seo-block">
-            <h2>Privacy, accounts and Pinterest</h2>
-            <p>You don't need a Pinterest account or a PinViddl account, and there's nothing to install. When you submit a link, PinViddl's servers read the public Pin page to find the image. The <a href="/privacy">Privacy Policy</a> explains what is and isn't logged. PinViddl is an independent tool and isn't affiliated with, endorsed by or sponsored by Pinterest. More about the site is on the <a href="/about">About page</a>.</p>
+            <h2>Privacy and account requirements</h2>
+            <p>You do not need a Pinterest or PinViddl account, and there is nothing to install. When you submit a link, PinViddl’s servers check the public Pin for available image files. The <a href="/privacy">Privacy Policy</a> explains how information is handled. PinViddl is an independent service, not affiliated with or endorsed by Pinterest. Learn more on the <a href="/about">About page</a>.</p>
         </div>
-
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="faq-section">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">Pinterest Image Downloader FAQs</h2>
             <div class="faq-container">
-
                 <div class="faq-item">
                     <button class="faq-trigger" aria-expanded="false">
-                        <span>Can I download images from private Pins, secret boards or Pins that need a login?</span>
+                        <span>Which Pinterest links does the image downloader accept?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="faq-inner">No. PinViddl only reads public Pin pages and doesn't log in to Pinterest. For your own private content, use Pinterest's download option or the original file you uploaded.</div>
+                        <div class="faq-inner">Use a link to one public Pin. A standard Pinterest Pin URL or a pin.it short link that opens the Pin can work. Board, profile, search, and home-feed links are not supported.</div>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-trigger" aria-expanded="false">
-                        <span>Can I download a whole board, or every image in a multi-image Pin?</span>
+                        <span>Can I download images from private Pins or secret boards?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="faq-inner">Not in one go. PinViddl works on one Pin link at a time, and board links are rejected. If a Pin holds several images, the result may list more than one row ("Option #1", "Option #2") but only the first image is previewed, so check each file after you save it.</div>
+                        <div class="faq-inner">No. PinViddl only checks public Pin pages and does not sign in to Pinterest. For your own private Pins, use Pinterest’s own download option or the original file you uploaded.</div>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-trigger" aria-expanded="false">
-                        <span>Can I get a bigger or sharper version than the one I downloaded?</span>
+                        <span>Can I download a whole board or every image in a multi-image Pin?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="faq-inner">Not from PinViddl, which doesn't upscale. Tools that enlarge images exist, but they add guessed detail instead of recovering the original. A higher-resolution source from the creator is the better route.</div>
+                        <div class="faq-inner">No. The tool processes one Pin link at a time, and board links are not supported. A Pin may return several image options, but the preview shows only the first; check each option before saving.</div>
                     </div>
                 </div>
-
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>What image formats can I save?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">The format depends on what Pinterest provides for the Pin. Results may be JPG, PNG, or WebP. PinViddl downloads the available file and does not convert it.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Can PinViddl make an image larger or sharper?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner">No. PinViddl does not upscale or enhance images. For a larger source, check the creator’s website or ask the rights holder.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -1769,3 +1769,121 @@ footer .footer-column a:hover {
 
 
     
+/* Hard-surface refresh: solid graphite planes, crisp seams, and physical depth. */
+:root {
+    --bg-primary: #101112;
+    --bg-secondary: #181a1c;
+    --text-primary: #f4f2ee;
+    --text-muted: #a4a5a6;
+    --glass-bg: #191b1d;
+    --glass-border: #373a3d;
+    --card-border: #373a3d;
+    --card-shadow: 6px 6px 0 #070808;
+}
+
+body {
+    background-color: #101112 !important;
+    background-image: linear-gradient(135deg, rgba(255,255,255,.018) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.018) 50%, rgba(255,255,255,.018) 75%, transparent 75%, transparent) !important;
+    background-size: 12px 12px !important;
+    color: #f4f2ee !important;
+}
+
+header {
+    background: #151718 !important;
+    border-bottom: 2px solid #3a3d40 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 4px 0 #080909 !important;
+}
+
+.container { max-width: 1200px !important; }
+
+.glass-card,
+.feature-item,
+.dl-card,
+.faq-item,
+.tutorial-box,
+.updates-panel,
+.seo-block,
+.seo-tool-card,
+.step-card,
+.how-step,
+.page-badge,
+.tool-tab,
+.about-card,
+.stat-card,
+.feature-card,
+.info-card,
+.contact-form-card,
+.blog-card,
+.featured-article,
+.post-hero {
+    border: 2px solid #393d40 !important;
+    border-radius: 8px !important;
+    background: #1b1e20 !important;
+    box-shadow: 5px 5px 0 #080909 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.glass-card { padding: 32px !important; }
+.feature-item:hover,
+.dl-card:hover,
+.seo-tool-card:hover,
+.how-step:hover,
+.blog-card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #080909 !important; }
+
+.input-container input,
+textarea,
+select,
+.contact-form-card input,
+.contact-form-card textarea {
+    border: 2px solid #45494c !important;
+    border-radius: 6px !important;
+    background: #0d0f10 !important;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.035) !important;
+}
+
+.input-container input:focus,
+textarea:focus,
+select:focus,
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    border-color: #e60023 !important;
+    box-shadow: 0 0 0 3px rgba(230,0,35,.2) !important;
+}
+
+.submit-btn,
+.btn-action,
+.new-download-btn,
+button[type="submit"] {
+    border: 2px solid #ff344d !important;
+    border-radius: 6px !important;
+    box-shadow: 4px 4px 0 #780013 !important;
+    transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease !important;
+}
+
+.submit-btn:active,
+.btn-action:active,
+.new-download-btn:active,
+button[type="submit"]:active {
+    transform: translate(3px, 3px) !important;
+    box-shadow: 1px 1px 0 #780013 !important;
+}
+
+.action-btn,
+.btn-secondary,
+.menu-toggle {
+    border: 2px solid #45494c !important;
+    border-radius: 6px !important;
+    background: #24282a !important;
+    box-shadow: 3px 3px 0 #080909 !important;
+}
+
+.faq-item.active { border-color: #e60023 !important; }
+footer { background: #0b0c0d !important; border-top: 2px solid #393d40 !important; }
+
+@media (max-width: 600px) {
+    .glass-card { padding: 20px !important; }
+    .container { padding-right: 18px !important; padding-left: 18px !important; }
+}

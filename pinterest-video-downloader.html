@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <title>Pinterest Video Downloader | Save Public Pin Videos</title>
+
+    <!-- Primary SEO & Meta Tags -->
+    <meta name="description" content="Download a public Pinterest video Pin and inspect the available result rows. Preview the video, choose Download Video, or copy its direct file URL." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="PinViddl" />
+    <meta name="theme-color" content="#e60023" />
+    <meta name="application-name" content="Pinterest Downloader" />
+    <meta name="twitter:site" content="@PinViddl" />
+    <link rel="canonical" href="https://pinviddl.com/pinterest-video-downloader" />
+    
+    <!-- Open Graph Tags -->
+    <meta name="google-site-verification" content="SS3ypfot64XCc3dgvwCJAv6Xx9vVRgPlYCOfGraq6r8" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter Tags -->
+    <!-- Link to Styles -->
+ <link rel="stylesheet" href="/romitsy.css" />
+
+    <!-- Structured Data & FAQ Schema -->
+    <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which Pinterest links can I use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use a link to one public Pin. A Pinterest Pin URL or a pin.it short link that opens the Pin should work. Board, profile, search, and home-feed links are not supported."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do I need a Pinterest account or an app?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. You do not need to sign in to Pinterest or create a PinViddl account. You only need to copy the link to a public Pin."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I download a private Pinterest Pin?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. PinViddl only checks public Pins. It cannot retrieve private, deleted, or sign-in-only content."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What quality will the downloaded video have?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The available file depends on what Pinterest provides for that Pin. PinViddl does not upscale or sharpen the source; quality details appear only when available."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Where does the downloaded video go?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your browser saves the file to its usual Downloads folder or prompts you to choose a location. On iPhone, check Safari Downloads or the Downloads folder in Files."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why is the preview blank when a download option appears?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The preview and download load separately. If a download option is shown, try it even if the preview does not play."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I convert a Pinterest video to GIF or MP3?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. PinViddl offers the available video file and does not convert it to GIF, MP3, or another format."
+            }
+        }
+    ]
+}</script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pinterest Downloader",
+    "url": "https://pinviddl.com/pinterest-video-downloader",
+    "description": "Free Pinterest video, image and GIF downloader. No login required.",
+    "publisher": {
+        "@type": "Organization",
+        "name": "PinViddl",
+        "url": "https://pinviddl.com/pinterest-video-downloader",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://pinviddl.com/pinviddl.png"
+        }
+    },
+    "alternateName": [
+        "PinViddl",
+        "pinviddl.com"
+    ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PinViddl",
+    "url": "https://pinviddl.com/pinterest-video-downloader",
+    "description": "A browser-based tool for checking video files available from one public Pinterest Pin. Preview and download an available file without signing in to Pinterest.",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "VideoDownloader",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+    "isAccessibleForFree": true,
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "featureList": [
+        "Pinterest video downloads",
+        "Pinterest image downloads",
+        "Pinterest GIF downloads",
+        "Previews of available media",
+        "Direct media links"
+    ]
+}
+    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D28LBZ52GX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D28LBZ52GX');
+</script>
+    <meta property="og:site_name" content="Pinterest Downloader" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinterest Video Downloader | Save Public Pin Videos" />
+    <meta property="og:description" content="Download a public Pinterest video Pin and inspect the available result rows. Preview the video, choose Download Video, or copy its direct file URL." />
+    <meta property="og:url" content="https://pinviddl.com/pinterest-video-downloader" />
+    <meta property="og:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta property="og:image:alt" content="PinViddl logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pinterest Video Downloader | Save Public Pin Videos" />
+    <meta name="twitter:description" content="Download a public Pinterest video Pin and inspect the available result rows. Preview the video, choose Download Video, or copy its direct file URL." />
+    <meta name="twitter:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta name="twitter:url" content="https://pinviddl.com/pinterest-video-downloader" />
+    <link rel="alternate" hreflang="en" href="https://pinviddl.com/pinterest-video-downloader" />
+    <link rel="alternate" hreflang="es" href="https://pinviddl.com/es/" />
+    <link rel="alternate" hreflang="pt" href="https://pinviddl.com/pt/" />
+    <link rel="alternate" hreflang="fr" href="https://pinviddl.com/fr/" />
+    <link rel="alternate" hreflang="de" href="https://pinviddl.com/de/" />
+    <link rel="alternate" hreflang="id" href="https://pinviddl.com/id/" />
+    <link rel="alternate" hreflang="hi" href="https://pinviddl.com/hi/" />
+    <link rel="alternate" hreflang="tr" href="https://pinviddl.com/tr/" />
+    <link rel="alternate" hreflang="it" href="https://pinviddl.com/it/" />
+    <link rel="alternate" hreflang="vi" href="https://pinviddl.com/vi/" />
+    <link rel="alternate" hreflang="x-default" href="https://pinviddl.com/pinterest-video-downloader" />
+</head>
+<body>
+    <header>
+        <div class="container header-wrap">
+            <a href="/" class="logo">
+                <img class="brand-logo" src="https://pinviddl.com/pinviddl.png" alt="PinViddl logo" />
+                <span class="brand-name">PinViddl</span>
+            </a>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
+                <a href="/pinterest-image-downloader">Image Downloader</a>
+                <a href="/pinterest-gif-downloader">GIF Downloader</a>
+                <a href="/contact">Contact</a>
+                <a href="/blog">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero font-sans">
+            <h1>Pinterest Video Downloader</h1>
+            <p>Open a public video Pin, paste its link, and check the files Pinterest makes available. Preview the primary result, then choose a video row to download or copy its direct URL.</p>
+            
+
+            <!-- Tool switcher tabs -->
+            <div class="tool-tabs">
+                <a href="/pinterest-video-downloader" class="tool-tab active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    Video
+                </a>
+                <a href="/pinterest-image-downloader" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Image
+                </a>
+                <a href="/pinterest-gif-downloader" class="tool-tab">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
+                    GIF
+                </a>
+            </div>
+        </section>
+
+        <!-- Downloader Frame -->
+        <section class="glass-card">
+            <form id="downloader-form" class="downloader-form">
+                <div class="input-container">
+                    <input 
+                        type="url" 
+                        id="pinterest-url"
+                        name="pinterest-url"
+                        aria-label="Pinterest Pin URL"
+                        placeholder="Paste Pinterest link (e.g., https://pin.it/abcde or www.pinterest.com/pin/123...)" 
+                        required 
+                    />
+                    <div class="input-action-buttons">
+                        <button type="button" id="paste-btn" class="action-btn">Paste</button>
+                        <button type="button" id="clear-btn" class="action-btn">Clear</button>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download
+                </button>
+            </form>
+
+            <!-- Loading Progress -->
+            <div id="spinner" class="spinner-container">
+                <div class="progress-header">
+                    <span class="loader-text">Preparing media preview</span>
+                    <strong id="progress-percent">0%</strong>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="Loading media" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- Previews & Media Results -->
+            <div id="results-container" class="results-container" style="margin-top: 32px;">
+                <div class="preview-grid">
+                    <div id="media-preview" class="media-frame">
+                        <!-- Preview video/image injected here -->
+                    </div>
+                    <div class="download-details">
+                        <div id="dl-options" class="dl-options">
+                            <!-- Download loops injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="new-download-btn" class="new-download-btn">Download another Pin</button>
+        </section>
+
+<!-- How to Download Steps -->
+        <section class="steps-section" aria-labelledby="steps-title">
+            <h2 id="steps-title" class="steps-title">Download a Pinterest video in three steps</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">1</div>
+                    <div class="step-img-wrap">
+                        <img
+                            src="https://pinviddl.com/media/download-pinterest-video-copy-link.jpg"
+                            alt="Open the Pinterest Pin and copy its link"
+                            width="400"
+                            height="250"
+                            loading="lazy"
+                        />
+                    </div>
+                    <p class="step-label">On Pinterest, open the video Pin and choose Share → Copy link. You can also copy the Pin URL from your browser’s address bar.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">2</div>
+                    <div class="step-img-wrap">
+                        <img
+                            src="https://pinviddl.com/media/pinterest-downloader-paste-link.jpg"
+                            alt="Paste the Pinterest Pin URL into PinViddl"
+                            width="400"
+                            height="250"
+                            loading="lazy"
+                        />
+                    </div>
+                    <p class="step-label">Paste the link into the box above and select Download. PinViddl checks that it points to a Pin and looks for an available video file.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">3</div>
+                    <div class="step-img-wrap">
+                        <img
+                            src="https://pinviddl.com/media/pinterest-video-downloader.jpg"
+                            alt="Save the Pinterest video to your device"
+                            width="400"
+                            height="250"
+                            loading="lazy"
+                        />
+                    </div>
+                    <p class="step-label">When a VIDEO Option row appears, choose Download Video to save it or Copy URL to copy the direct media address.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advertisement appears after the downloader and quick-start instructions. -->
+        <!-- ads -->
+       <div style="width:100%; display:flex; justify-content:center; align-items:center; margin:20px auto; overflow:hidden;">
+    <script>
+      atOptions = {
+        'key' : 'cde15667464f6c908d6e9678ad4e2252',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highrevenueformat.com/cde15667464f6c908d6e9678ad4e2252/invoke.js"></script>
+</div>
+
+        <!-- SEO Content Section -->
+                                <section class="seo-content container">
+            <div class="seo-block">
+                <h2>What the video results show</h2>
+                <p>For a public video Pin, PinViddl lists the video files it can retrieve as VIDEO Option rows. Each row has a Download Video button and a Copy URL button. Download saves that option through your browser; Copy URL copies the direct media address, not the Pinterest post link.</p>
+                <p>When Pinterest returns more than one usable video file, review the rows before choosing. PinViddl does not invent higher resolution or sharpen a source. If no quality value is available, “Super HD Source” may appear as a fallback label; it does not tell you the file’s pixel dimensions.</p>
+            </div>
+            <div class="seo-block">
+                <h2>Copy the URL of one public video Pin</h2>
+                <p>Open the video Pin itself and use Pinterest’s Share → Copy link option. You can also copy the address bar after the Pin opens on its own page. A full Pin URL or a valid <code>pin.it</code> share link can work.</p>
+                <p>Links to boards, profiles, search pages, or the home feed are not individual Pin links. Private, removed, or sign-in-only Pins cannot be retrieved.</p>
+            </div>
+            <div class="seo-block">
+                <h2>The preview can fail while the file link still works</h2>
+                <p>PinViddl loads the video preview and the download rows separately. If the preview area says “Preview unavailable — use the Download button below” and a video result is listed, try Download Video.</p>
+                <p>If the page reports “No downloadable media found for this Pin,” the public Pin did not return a usable video file. Check that you pasted the video Pin itself, not its board or profile.</p>
+            </div>
+            <div class="seo-block">
+                <h2>Find the saved video on your device</h2>
+                <ul class="seo-list">
+                    <li><strong>Android:</strong> check your browser’s Downloads list or the Downloads folder in your file manager.</li>
+                    <li><strong>iPhone or iPad:</strong> check Safari Downloads or Files → Downloads. From Files, use Share to save the video to Photos if available.</li>
+                    <li><strong>Windows or Mac:</strong> look in the browser’s download list or Downloads folder. If the video opens in a tab, use the browser’s save option.</li>
+                </ul>
+            </div>
+            <div class="seo-block">
+                <h2>When a Pinterest video link is not working</h2>
+                <p>Check that the link opens one public video Pin, the Pin has not been deleted, and the URL was copied in full. A short <code>pin.it</code> link may stop working; open it and copy the full Pin address to try again.</p>
+                <p>If the same public Pin keeps failing, send its link and the exact message you see through the <a href="/contact">Contact page</a>.</p>
+            </div>
+            <div class="seo-block">
+                <h2>Need an image or animated Pin instead?</h2>
+                <p>Use the <a href="/pinterest-image-downloader">Pinterest Image Downloader</a> for a still photo or graphic. For an animated Pin, use the <a href="/pinterest-gif-downloader">Pinterest GIF Downloader</a>; the result can be a GIF or an MP4 depending on the media Pinterest provides.</p>
+            </div>
+            <div class="seo-block">
+                <h2>Use saved videos responsibly</h2>
+                <p>Download videos you own or have permission to save. Ask the creator before reposting, editing, or using a video commercially. PinViddl is an independent tool and is not affiliated with Pinterest; see the <a href="/disclaimer">Disclaimer</a> and <a href="/privacy">Privacy Policy</a>.</p>
+            </div>
+        </section>
+
+        <!-- Dynamic FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Pinterest Video Downloader questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Which Pinterest links can I use?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">Use a link to one public Pin. A Pinterest Pin URL or a pin.it short link that opens the Pin should work. Board, profile, search, and home-feed links are not supported.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Do I need a Pinterest account or an app?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">No. You do not need to sign in to Pinterest or create a PinViddl account. You only need to copy the link to a public Pin.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Can I download a private Pinterest Pin?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">No. PinViddl only checks public Pins. It cannot retrieve private, deleted, or sign-in-only content.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>What quality will the downloaded video have?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">The available file depends on what Pinterest provides for that Pin. PinViddl does not upscale or sharpen the source; quality details appear only when available.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Where does the downloaded video go?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">Your browser saves the file to its usual Downloads folder or prompts you to choose a location. On iPhone, check Safari Downloads or the Downloads folder in Files.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Why is the preview blank when a download option appears?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">The preview and download load separately. If a download option is shown, try it even if the preview does not play.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Can I convert a Pinterest video to GIF or MP3?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-inner">No. PinViddl offers the available video file and does not convert it to GIF, MP3, or another format.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                    <a href="/disclaimer">Copyright Notice</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="/about">About Pinviddl</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/blog">Blog</a>
+                </div>
+            </div>
+            <p>&copy; 2026 PinViddl. This site is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>
+        </div>
+    </footer>
+
+    <script src="/romitspt.js"></script>
+</body>
+</html>

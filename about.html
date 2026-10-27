@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
     <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/romitkr5539-lgtm/pinviddl/main/pinviddl-favicon.png" />
-    <title>About PinViddl - What It Is, How It Works, and Why It Exists</title>
-    <meta name="description" content="PinViddl is a free, browser-based Pinterest downloader for videos, images, and GIFs. Learn what the tool does, how it works technically, and who it's built for." />
+    <title>About Pinterest Downloader | PinViddl</title>
+    <meta name="description" content="Learn how PinViddl processes public Pinterest Pin links and returns available video, image, or GIF files. See how the tool works and its limits." />
     <link rel="canonical" href="https://pinviddl.com/about" />
     <link rel="stylesheet" href="/style.css" />
     <style>
@@ -355,6 +355,18 @@
             .cta-strip { padding: 32px 22px; }
         }
     </style>
+    <meta property="og:site_name" content="Pinterest Downloader" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Pinterest Downloader | PinViddl" />
+    <meta property="og:description" content="Learn how PinViddl processes public Pinterest Pin links and returns available video, image, or GIF files. See how the tool works and its limits." />
+    <meta property="og:url" content="https://pinviddl.com/about" />
+    <meta property="og:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta property="og:image:alt" content="PinViddl logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Pinterest Downloader | PinViddl" />
+    <meta name="twitter:description" content="Learn how PinViddl processes public Pinterest Pin links and returns available video, image, or GIF files. See how the tool works and its limits." />
+    <meta name="twitter:image" content="https://pinviddl.com/pinviddl.png" />
+    <meta name="twitter:url" content="https://pinviddl.com/about" />
 </head>
 <body>
     <header>
@@ -368,9 +380,9 @@
             </button>
             <nav class="header-links" id="mobile-menu" aria-label="Main navigation">
                 <a href="/">Home</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
+                <a href="/blog">Blog</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -379,8 +391,8 @@
 
         <!-- Hero -->
         <section class="about-hero">
-            <h1>About <span>PinViddl</span></h1>
-            <p>A free, browser-based tool for saving Pinterest videos, images, and GIFs — built to do one thing well, without asking anything of you in return.</p>
+            <h1>About <span>Pinterest Downloader</span></h1>
+            <p>PinViddl is an independent Pinterest downloader for checking a public Pin and saving an available video, image, or animated file. This page explains what happens when you use the tool and what it can and cannot do.</p>
             <div class="hero-badges">
                 <span class="hero-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -412,12 +424,12 @@
                 <span class="stat-desc">Accounts, sign-ups, or logins required</span>
             </div>
             <div class="stat-card">
-                <span class="stat-num">0</span>
-                <span class="stat-desc">Files or URLs stored after your session ends</span>
+                <span class="stat-num">1</span>
+                <span class="stat-desc">Public Pin link checked per request</span>
             </div>
             <div class="stat-card">
-                <span class="stat-num">∞</span>
-                <span class="stat-desc">Downloads — no daily limits or caps</span>
+                <span class="stat-num">0</span>
+                <span class="stat-desc">App installs required</span>
             </div>
         </div>
 
@@ -430,8 +442,8 @@
                     </span>
                     What PinViddl Is
                 </h2>
-                <p>PinViddl is a free, browser-based tool for downloading publicly available Pinterest content. You paste the URL of a Pinterest Pin — a video Pin, a photo Pin, or an animated GIF Pin — and PinViddl processes it and returns the media file for you to save to your device.</p>
-                <p>It runs entirely in your browser. There is no app to download, no account to create, no email address to hand over. You don't need a Pinterest account either. If the Pin is publicly visible on Pinterest, PinViddl can retrieve it.</p>
+                <p>PinViddl is a free online tool for checking public Pinterest video, image, and animated Pins. Paste one Pin URL, and the service will try to find media that can be previewed or downloaded to your device.</p>
+                <p>The interface runs in your browser, but link processing uses a PinViddl backend. You do not need to create a PinViddl account or provide an email address to use the downloader. Private, removed, restricted, or unsupported Pins may not work, even if a link opens for you on Pinterest.</p>
                 <p>PinViddl is an independent tool. It is not affiliated with, endorsed by, or connected to Pinterest, Inc. in any way. The name "Pinterest" is used purely to describe what the tool works with — processing Pinterest Pin URLs to retrieve the media attached to them.</p>
             </div>
         </div>
@@ -445,9 +457,9 @@
                     </span>
                     Why It Exists
                 </h2>
-                <p>Pinterest is a discovery platform — it's built for browsing and collecting ideas, not for saving media to your device. Pinterest doesn't offer a native download button for videos, and right-clicking images on the platform typically saves a compressed thumbnail rather than the full-resolution original. Saving content for offline use, personal reference, or creative work is unnecessarily hard.</p>
-                <p>PinViddl was built to solve that specific friction. The goal is a tool that gets out of your way: paste a link, get the file, done. No upsell to a premium tier, no "download limit reached" message after five files, no request for payment details to access HD quality.</p>
-                <p>That philosophy hasn't changed since the first version. Everything added since launch — media preview before downloading, live progress tracking, a dedicated image downloader, a dedicated GIF downloader — has been built around the same principle: make saving Pinterest content as direct as possible.</p>
+                <p>Sometimes you want a copy of a public Pin for offline viewing or personal reference, but finding the right file and saving it can take extra steps. PinViddl gives you a simple place to check what media is available from a single Pin link.</p>
+                <p>The workflow is straightforward: paste a public Pin URL, review the media options the service can identify, then use the download button or copy the media URL. Availability and quality depend on the source Pin and what Pinterest makes accessible at the time.</p>
+                <p>Video, image, and GIF pages help you find the relevant instructions and tool. The service may not be able to retrieve every Pin, and it does not convert, upscale, or repair source media.</p>
             </div>
         </div>
 
@@ -460,8 +472,8 @@
                     </span>
                     How It Works
                 </h2>
-                <p>PinViddl reads the public Pinterest page behind any Pin URL you provide — the same page your browser would load if you visited the link directly. It extracts the media URL embedded in that page and returns the actual file to your browser for download.</p>
-                <p>It doesn't log in to Pinterest on your behalf, access private content, or store anything you submit. The Pin URL is processed in memory for the duration of the request and discarded immediately after. Nothing is written to disk.</p>
+                <p>When you submit a Pin URL, your browser sends it to a PinViddl processing endpoint. The backend attempts to read the public Pin and identify media URLs. Preview and download requests are then routed through the service infrastructure, which relays the selected file to your browser.</p>
+                <p>PinViddl does not ask for your Pinterest password and cannot unlock private or restricted content. The Pin URL is transmitted to the processing service; infrastructure providers may process request data as described in the <a href="/privacy">Privacy Policy</a>. Do not submit links or information you consider sensitive.</p>
                 <div class="how-grid">
                     <div class="how-item">
                         <div class="how-num">01</div>
@@ -471,12 +483,12 @@
                     <div class="how-item">
                         <div class="how-num">02</div>
                         <h3>PinViddl fetches the page</h3>
-                        <p>Our backend reads the public Pin page and extracts the direct URL of the media file embedded in it.</p>
+                        <p>The processing service checks the public Pin and attempts to identify media the downloader supports.</p>
                     </div>
                     <div class="how-item">
                         <div class="how-num">03</div>
                         <h3>You get the file</h3>
-                        <p>A preview appears along with a download button. The file saves directly to your device — no redirect, no new tab.</p>
+                        <p>If media is found, the page displays available preview and download actions. Your browser handles the download and may save the file to its usual Downloads folder.</p>
                     </div>
                 </div>
             </div>
@@ -499,25 +511,25 @@
                         </div>
                         <div class="tool-link-text">
                             <strong>Pinterest Video Downloader</strong>
-                            <span>Saves video Pins as MP4 files at the highest available resolution.</span>
+                            <span>Checks a public video Pin and shows a video download option when one is available.</span>
                         </div>
                     </a>
-                    <a href="/pinterest-image-downloader.html" class="tool-link-card">
+                    <a href="/pinterest-image-downloader" class="tool-link-card">
                         <div class="tool-link-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                         </div>
                         <div class="tool-link-text">
                             <strong>Pinterest Image Downloader</strong>
-                            <span>Retrieves the full-resolution image from any public photo Pin.</span>
+                            <span>Checks a public photo Pin and offers an image file when one is available.</span>
                         </div>
                     </a>
-                    <a href="/pinterest-gif-downloader.html" class="tool-link-card">
+                    <a href="/pinterest-gif-downloader" class="tool-link-card">
                         <div class="tool-link-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M10 17h4"/><path d="M14 2v6h6"/></svg>
                         </div>
                         <div class="tool-link-text">
                             <strong>Pinterest GIF Downloader</strong>
-                            <span>Downloads animated Pins — handles Pinterest's GIF-to-MP4 conversion automatically.</span>
+                            <span>Checks an animated Pin and offers the media format identified by the service; it does not convert formats.</span>
                         </div>
                     </a>
                 </div>
@@ -537,7 +549,7 @@
                 <div class="principle-list">
                     <div class="principle-item">
                         <div class="principle-dot"></div>
-                        <p><strong>It doesn't store your Pin URLs.</strong> URLs you submit are processed in memory and discarded the moment the response is sent. Nothing is logged or written to a database.</p>
+                        <p><strong>No PinViddl account is required.</strong> Submitted URLs are sent to the processing endpoint to retrieve a Pin. Service providers may handle request data under their own infrastructure practices; see the <a href="/privacy">Privacy Policy</a> for details.</p>
                     </div>
                     <div class="principle-item">
                         <div class="principle-dot"></div>
@@ -545,7 +557,7 @@
                     </div>
                     <div class="principle-item">
                         <div class="principle-dot"></div>
-                        <p><strong>It doesn't host or serve media files.</strong> Media files stay on Pinterest's servers. PinViddl retrieves the direct URL and your browser downloads the file from Pinterest directly, not from our infrastructure.</p>
+                        <p><strong>It is not Pinterest.</strong> PinViddl is an independent service. Its backend and delivery infrastructure may relay media between Pinterest and your browser.</p>
                     </div>
                     <div class="principle-item">
                         <div class="principle-dot"></div>
@@ -553,11 +565,11 @@
                     </div>
                     <div class="principle-item">
                         <div class="principle-dot"></div>
-                        <p><strong>It doesn't run ads that track you.</strong> PinViddl does not integrate advertising networks, retargeting pixels, or social media tracking scripts on its pages.</p>
+                        <p><strong>It uses third-party services.</strong> The site loads Google Analytics and third-party advertising code. These providers may collect information through their scripts; review the <a href="/privacy">Privacy Policy</a> and provider policies for details.</p>
                     </div>
                     <div class="principle-item">
                         <div class="principle-dot"></div>
-                        <p><strong>It doesn't download entire boards.</strong> PinViddl processes one Pin URL at a time and is not designed for bulk or automated content extraction.</p>
+                        <p><strong>It doesn't download entire boards.</strong> PinViddl is designed for one Pin URL per request, not for downloading entire boards.</p>
                     </div>
                 </div>
             </div>
@@ -578,21 +590,21 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
                         </div>
                         <h3>Video as MP4</h3>
-                        <p>Pinterest video Pins are downloaded as clean MP4 files at the highest resolution Pinterest makes available for that Pin.</p>
+                        <p>When a compatible video is found, the tool provides the available video file. The source format and quality depend on the Pin and Pinterest’s response.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                         </div>
-                        <h3>Full-Resolution Images</h3>
-                        <p>Image Pins are retrieved at full source resolution — not the compressed thumbnail Pinterest shows in feeds.</p>
+                        <h3>Image Downloads</h3>
+                        <p>When an image file is available, you can preview it and save the version returned by the service. The tool does not upscale the source image.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 13h4"/><path d="M14 2v6h6"/></svg>
                         </div>
                         <h3>GIF & Animated Pins</h3>
-                        <p>Animated Pins are downloaded in the format Pinterest stores them — usually MP4, which plays identically to the original GIF animation.</p>
+                        <p>Animated Pins are offered in the format returned for that Pin. Some may be provided as video rather than as a .gif file.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -605,15 +617,15 @@
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </div>
-                        <h3>Live Progress Tracking</h3>
-                        <p>A real-time progress bar and percentage indicator shows processing status while the Pin is being retrieved.</p>
+                        <h3>Request Status</h3>
+                        <p>The page shows a loading indicator while it checks the Pin. Processing time can vary with Pinterest and network response.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                         </div>
                         <h3>Mobile-Optimised</h3>
-                        <p>The interface is designed for mobile use — large touch targets, responsive layout, and clipboard paste support in mobile browsers.</p>
+                        <p>The layout adapts to smaller screens. Clipboard access depends on browser permissions and device support.</p>
                     </div>
                 </div>
             </div>
@@ -630,20 +642,20 @@
                 </h2>
                 <p>PinViddl is built for personal use — saving content for offline reference, inspiration boards, or personal collections. It is not intended for mass downloading, commercial redistribution, or any use that infringes the rights of content creators.</p>
                 <p>Every piece of media on Pinterest belongs to its creator. Downloading a copy doesn't transfer any of those rights to you. If you want to reuse, republish, or build something with content you found on Pinterest, the right path is to contact the creator and get their permission.</p>
-                <p>For the full picture on copyright and intended use, see the <a href="/disclaimer.html">Disclaimer</a>. For information on how we handle your data, see the <a href="/privacy.html">Privacy Policy</a>.</p>
+                <p>For the full picture on copyright and intended use, see the <a href="/disclaimer">Disclaimer</a>. For information on how we handle your data, see the <a href="/privacy">Privacy Policy</a>.</p>
             </div>
         </div>
 
         <!-- CTA -->
         <div class="cta-strip">
             <h2>Ready to try it?</h2>
-            <p>Paste any public Pinterest Pin link and get the file in a few seconds — no sign-up, no cost.</p>
+            <p>Start with one public Pinterest Pin URL. The tool will show a result when it can identify compatible media.</p>
             <div class="cta-btns">
                 <a href="/" class="cta-btn-primary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Download a Video
                 </a>
-                <a href="/contact.html" class="cta-btn-secondary">
+                <a href="/contact" class="cta-btn-secondary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     Get in Touch
                 </a>
@@ -663,15 +675,15 @@
                 </div>
                 <div class="footer-column">
                     <h3>Legal</h3>
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/disclaimer.html">Disclaimer</a>
-                    <a href="/disclaimer.html">Copyright Notice</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                    <a href="/disclaimer">Copyright Notice</a>
                 </div>
                 <div class="footer-column">
                     <h3>Company</h3>
-                    <a href="/about.html">About PinViddl</a>
-                    <a href="/contact.html">Contact</a>
-                    <a href="/blog.html">Blog</a>
+                    <a href="/about">About PinViddl</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/blog">Blog</a>
                 </div>
             </div>
             <p>&copy; 2026 PinViddl. This app is not affiliated with, endorsed, or sponsored by Pinterest, Inc. All trademarks belong to their respective creators.</p>

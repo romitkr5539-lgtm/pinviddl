@@ -1,256 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core downloader pages -->
   <url>
     <loc>https://pinviddl.com/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
+    <loc>https://pinviddl.com/pinterest-video-downloader</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
     <loc>https://pinviddl.com/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Company pages -->
   <url>
     <loc>https://pinviddl.com/about</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/contact</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Legal pages -->
   <url>
     <loc>https://pinviddl.com/privacy</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/disclaimer</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Blog index -->
   <url>
     <loc>https://pinviddl.com/blog</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Blog posts -->
   <url>
     <loc>https://pinviddl.com/blog/how-to-download-pinterest-videos</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://pinviddl.com/blog/save-pinterest-images</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://pinviddl.com/blog/pinterest-gif-download-guide</loc>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- German (de) pages -->
   <url>
     <loc>https://pinviddl.com/de/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/de/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/de/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Spanish (es) pages -->
   <url>
     <loc>https://pinviddl.com/es/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/es/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/es/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- French (fr) pages -->
   <url>
     <loc>https://pinviddl.com/fr/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/fr/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/fr/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Hindi (hi) pages -->
   <url>
     <loc>https://pinviddl.com/hi/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/hi/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/hi/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Indonesian (id) pages -->
   <url>
     <loc>https://pinviddl.com/id/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/id/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/id/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Portuguese (pt) pages -->
   <url>
     <loc>https://pinviddl.com/pt/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/pt/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/pt/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Italian (it) pages -->
   <url>
     <loc>https://pinviddl.com/it/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/it/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/it/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <!-- Turkish (tr) pages -->
   <url>
     <loc>https://pinviddl.com/tr/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/tr/pinterest-image-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
   <url>
     <loc>https://pinviddl.com/tr/pinterest-gif-downloader</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
    <url>
     <loc>https://pinviddl.com/vi/</loc>
-    <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-27</lastmod>
   </url>
 
 </urlset>
